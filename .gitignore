@@ -1,0 +1,8 @@
+#VS code
+.vscode
+*.code-workspace
+.history/
+#Mac
+*.DS_STORE
+#Goland
+.idea
