@@ -1,6 +1,6 @@
 module github.com/instill-ai/operator
 
-go 1.19.0
+go 1.19
 
 require (
 	github.com/gofrs/uuid v4.4.0+incompatible
