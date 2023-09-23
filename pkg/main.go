@@ -12,8 +12,10 @@ import (
 	"github.com/instill-ai/operator/pkg/base64"
 )
 
-var once sync.Once
-var operator base.IOperator
+var (
+	once     sync.Once
+	operator base.IOperator
+)
 
 type Operator struct {
 	base.BaseOperator
