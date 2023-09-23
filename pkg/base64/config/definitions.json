@@ -1,0 +1,198 @@
+[
+  {
+    "uid": "3a836447-c211-4134-9cc5-ad45e1cc467e",
+    "id": "op-base64",
+    "title": "Base64",
+    "documentation_url": "https://www.instill.tech/docs/vdp/operators/base64",
+    "icon": "base64.svg",
+    "icon_url": "",
+    "spec": {
+      "resource_specification": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Base64 Operator Spec",
+        "type": "object",
+        "required": [],
+        "additionalProperties": true
+      },
+      "component_specification": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Base64 Component Setting",
+        "type": "object",
+        "properties": {
+          "input": {
+            "properties": {
+              "task": {
+                "title": "Task",
+                "enum": [
+                  "TASK_ENCODE",
+                  "TASK_DECODE"
+                ]
+              },
+              "data": {
+                "title": "Data",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "openapi_specifications": {
+        "TASK_ENCODE": {
+          "openapi": "3.0.0",
+          "info": {
+            "version": "1.0.0",
+            "title": "Base64 Operator OpenAPI"
+          },
+          "paths": {
+            "/execute": {
+              "post": {
+                "requestBody": {
+                  "required": true,
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "inputs": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "task",
+                                "data"
+                              ],
+                              "properties": {
+                                "task": {
+                                  "const": "TASK_ENCODE"
+                                },
+                                "data": {
+                                  "title": "Data",
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "responses": {
+                  "200": {
+                    "description": "",
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "outputs": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "data"
+                                ],
+                                "properties": {
+                                  "data": {
+                                    "title": "Data",
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "TASK_DECODE": {
+          "openapi": "3.0.0",
+          "info": {
+            "version": "1.0.0",
+            "title": "Base64 Operator OpenAPI"
+          },
+          "paths": {
+            "/execute": {
+              "post": {
+                "requestBody": {
+                  "required": true,
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "inputs": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "task",
+                                "data"
+                              ],
+                              "properties": {
+                                "task": {
+                                  "const": "TASK_DECODE"
+                                },
+                                "data": {
+                                  "title": "Data",
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "responses": {
+                  "200": {
+                    "description": "",
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "type": "object",
+                          "properties": {
+                            "outputs": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "data"
+                                ],
+                                "properties": {
+                                  "data": {
+                                    "title": "Data",
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "public": true,
+    "custom": false,
+    "vendor_attributes": {
+      "githubIssueLabel": "base64",
+      "license": "MIT",
+      "releaseStage": "alpha",
+      "resourceRequirements": {},
+      "modelType": "api"
+    }
+  }
+]
