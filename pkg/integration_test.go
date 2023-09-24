@@ -9,12 +9,12 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/instill-ai/operator/pkg/textextraction"
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/types/known/structpb"
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
+	"github.com/instill-ai/operator/pkg/textextraction"
 )
 
 var (
