@@ -14,17 +14,20 @@ import (
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
+	"github.com/instill-ai/operator/pkg/textextraction"
 )
 
 var (
-	oper base.IOperation
+	base64Oper       base.IOperation
+	textExtractionOp base.IOperation
 )
 
 func init() {
 	config := &structpb.Struct{
 		Fields: map[string]*structpb.Value{}}
 	o := Init(nil, OperatorOptions{})
-	oper, _ = o.CreateOperation(o.ListOperatorDefinitionUids()[0], config, nil)
+	base64Oper, _ = o.CreateOperation(o.ListOperatorDefinitionUids()[0], config, nil)
+	textExtractionOp, _ = o.CreateOperation(o.ListOperatorDefinitionUids()[1], config, nil)
 }
 
 func TestBase64(t *testing.T) {
@@ -34,7 +37,7 @@ func TestBase64(t *testing.T) {
 	b, _ := json.Marshal(req)
 	protojson.Unmarshal(b, &in)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_ENCODE"}}
-	op, err := oper.Execute([]*structpb.Struct{&in})
+	op, err := base64Oper.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
 
 	b, _ = json.Marshal(op)
@@ -43,10 +46,40 @@ func TestBase64(t *testing.T) {
 	fmt.Printf("\n\n bytes: %s", req.Data)
 	protojson.Unmarshal(b, &in)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_DECODE"}}
-	op, err = oper.Execute([]*structpb.Struct{&in})
+	op, err = base64Oper.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
 
 	b, _ = json.Marshal(op)
 	json.Unmarshal(b, &req)
 	ioutil.WriteFile("test_artifacts/image_res.jpg", []byte(req.Data), 0644)
+}
+
+func TestTextExtraction(t *testing.T) {
+	path := "test_artifacts/resume.pdf"
+	file, _ := ioutil.ReadFile(path)
+	fileReq := textextraction.FromFile{
+		FileContents: string(file),
+		ContentType:  "application/pdf",
+	}
+	var in structpb.Struct
+	b, _ := json.Marshal(fileReq)
+	protojson.Unmarshal(b, &in)
+	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_FILE"}}
+	op, err := textExtractionOp.Execute([]*structpb.Struct{&in})
+	fmt.Printf("\n op :%v, err:%s", op, err)
+
+	pathReq := textextraction.FromPath{FilePath: path}
+	b, _ = json.Marshal(pathReq)
+	protojson.Unmarshal(b, &in)
+	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
+	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
+	fmt.Printf("\n op :%v, err:%s", op, err)
+
+	webPath := "https://instill.tech"
+	pathReq = textextraction.FromPath{FilePath: webPath}
+	b, _ = json.Marshal(pathReq)
+	protojson.Unmarshal(b, &in)
+	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
+	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
+	fmt.Printf("\n op :%v, err:%s", op, err)
 }
