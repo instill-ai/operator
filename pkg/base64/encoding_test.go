@@ -1,12 +1,10 @@
-package pkg
+package base64
 
 import (
 	"encoding/base64"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-
-	base64Op "github.com/instill-ai/operator/pkg/base64"
 )
 
 func TestEncode(t *testing.T) {
@@ -29,7 +27,7 @@ func TestEncode(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.Name, func(t *testing.T) {
-			assert.Equal(t, test.ExpectedOutput, base64Op.Encode(test.Input))
+			assert.Equal(t, test.ExpectedOutput, Encode(test.Input))
 		})
 	}
 }
@@ -56,7 +54,7 @@ func TestDecode(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.Name, func(t *testing.T) {
-			res, err := base64Op.Decode(test.Input)
+			res, err := Decode(test.Input)
 			assert.Equal(t, test.ExpectedOutput, res)
 			assert.Equal(t, test.ExpectedErr, err)
 		})
