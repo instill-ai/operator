@@ -3,7 +3,7 @@ package textextraction
 import (
 	"bytes"
 	"errors"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 
@@ -18,7 +18,7 @@ func URLToText(url string) (string, error) {
 	}
 	contentType := resp.Header.Get("Content-Type")
 	contentType = strings.Split(contentType, ";")[0]
-	b, _ := ioutil.ReadAll(resp.Body)
+	b, _ := io.ReadAll(resp.Body)
 	return BytesToText(b, contentType)
 }
 
