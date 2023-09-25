@@ -19,9 +19,8 @@ import (
 )
 
 const (
-	operatorName = "base64"
-	encode       = "TASK_ENCODE"
-	decode       = "TASK_DECODE"
+	encode = "TASK_ENCODE"
+	decode = "TASK_DECODE"
 )
 
 var (
@@ -39,7 +38,7 @@ type Operator struct {
 }
 
 type Operation struct {
-	base.BaseOperation
+	base.BaseExecution
 	operator *Operator
 }
 
@@ -50,7 +49,7 @@ type Base64 struct {
 func Init(logger *zap.Logger, options OperatorOptions) base.IOperator {
 	once.Do(func() {
 		loader := configLoader.InitJSONSchema(logger)
-		connDefs, err := loader.Load(operatorName, connectorPB.ConnectorType_CONNECTOR_TYPE_UNSPECIFIED, definitionJSON)
+		connDefs, err := loader.LoadOperator(definitionJSON)
 		if err != nil {
 			panic(err)
 		}
@@ -68,16 +67,16 @@ func Init(logger *zap.Logger, options OperatorOptions) base.IOperator {
 	return operator
 }
 
-func (o *Operator) CreateOperation(defUid uuid.UUID, config *structpb.Struct, logger *zap.Logger) (base.IOperation, error) {
+func (o *Operator) CreateExecution(defUid uuid.UUID, config *structpb.Struct, logger *zap.Logger) (base.IExecution, error) {
 	def, err := o.GetOperatorDefinitionByUid(defUid)
 	if err != nil {
 		return nil, err
 	}
 	return &Operation{
-		BaseOperation: base.BaseOperation{
+		BaseExecution: base.BaseExecution{
 			Logger: logger, DefUid: defUid,
-			Config:     config,
-			Definition: def,
+			Config:                config,
+			OpenAPISpecifications: def.Spec.OpenapiSpecifications,
 		},
 		operator: o,
 	}, nil
