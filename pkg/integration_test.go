@@ -18,16 +18,16 @@ import (
 )
 
 var (
-	base64Oper       base.IOperation
-	textExtractionOp base.IOperation
+	base64Oper       base.IExecution
+	textExtractionOp base.IExecution
 )
 
 func init() {
 	config := &structpb.Struct{
 		Fields: map[string]*structpb.Value{}}
 	o := Init(nil, OperatorOptions{})
-	base64Oper, _ = o.CreateOperation(o.ListOperatorDefinitionUids()[0], config, nil)
-	textExtractionOp, _ = o.CreateOperation(o.ListOperatorDefinitionUids()[1], config, nil)
+	base64Oper, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[0], config, nil)
+	textExtractionOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[1], config, nil)
 }
 
 func TestBase64(t *testing.T) {
