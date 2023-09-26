@@ -4,6 +4,7 @@ repos:
     hooks:
       - id: check-yaml
       - id: check-json
+      - id: check-merge-conflict
       - id: pretty-format-json
         args: [--autofix]
       - id: end-of-file-fixer
