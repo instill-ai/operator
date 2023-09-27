@@ -14,12 +14,14 @@ import (
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
+	jsonop "github.com/instill-ai/operator/pkg/json"
 	"github.com/instill-ai/operator/pkg/textextraction"
 )
 
 var (
 	base64Oper       base.IExecution
 	textExtractionOp base.IExecution
+	jsonOp           base.IExecution
 )
 
 func init() {
@@ -28,6 +30,7 @@ func init() {
 	o := Init(nil, OperatorOptions{})
 	base64Oper, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[0], config, nil)
 	textExtractionOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[1], config, nil)
+	jsonOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[4], config, nil)
 }
 
 func TestBase64(t *testing.T) {
@@ -82,4 +85,45 @@ func TestTextExtraction(t *testing.T) {
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
 	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
+}
+
+func TestJSON(t *testing.T) {
+	tests := []struct {
+		input jsonop.GetValueInput
+	}{
+		{
+			input: jsonop.GetValueInput{
+				Path:       ".",
+				JSONString: `{"a":{"b":{"c": [1, 2, 3, 4]}}}`,
+			},
+		},
+		{
+			input: jsonop.GetValueInput{
+				Path:       "a",
+				JSONString: `{"a":{"b":{"c": [1, 2, 3, 4]}}}`,
+			},
+		},
+		{
+			input: jsonop.GetValueInput{
+				Path:       "a.b",
+				JSONString: `{"a":{"b":{"c": [1, 2, 3, 4]}}}`,
+			},
+		},
+		{
+			input: jsonop.GetValueInput{
+				Path:       "a.b.c[0]",
+				JSONString: `{"a":{"b":{"c": [1, 2, 3, 4]}}}`,
+			},
+		},
+	}
+	var in structpb.Struct
+	for _, test := range tests {
+		t.Run(test.input.Path, func(t *testing.T) {
+			b, _ := json.Marshal(test.input)
+			protojson.Unmarshal(b, &in)
+			in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_GET_VALUE"}}
+			op, err := jsonOp.Execute([]*structpb.Struct{&in})
+			fmt.Printf("\n op :%v, err:%s \n", op, err)
+		})
+	}
 }
