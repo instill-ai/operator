@@ -5,12 +5,12 @@ import (
 	"sync"
 
 	"github.com/gofrs/uuid"
-	"github.com/instill-ai/operator/pkg/json"
 	"go.uber.org/zap"
 	"google.golang.org/protobuf/types/known/structpb"
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
+	"github.com/instill-ai/operator/pkg/json"
 	"github.com/instill-ai/operator/pkg/pipeline"
 	"github.com/instill-ai/operator/pkg/textextraction"
 )
