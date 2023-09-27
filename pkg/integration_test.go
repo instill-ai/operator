@@ -14,14 +14,17 @@ import (
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
-	jsonop "github.com/instill-ai/operator/pkg/json"
+	"github.com/instill-ai/operator/pkg/rest"
 	"github.com/instill-ai/operator/pkg/textextraction"
+
+	jsonop "github.com/instill-ai/operator/pkg/json"
 )
 
 var (
 	base64Oper       base.IExecution
 	textExtractionOp base.IExecution
 	jsonOp           base.IExecution
+	restOp           base.IExecution
 )
 
 func init() {
@@ -31,6 +34,7 @@ func init() {
 	base64Oper, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[0], config, nil)
 	textExtractionOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[1], config, nil)
 	jsonOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[4], config, nil)
+	restOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[5], config, nil)
 }
 
 func TestBase64(t *testing.T) {
@@ -126,4 +130,19 @@ func TestJSON(t *testing.T) {
 			fmt.Printf("\n op :%v, err:%s \n", op, err)
 		})
 	}
+}
+
+func TestREST(t *testing.T) {
+	req := rest.Request{
+		URL:         "https://httpbin.org/post",
+		Method:      "POST",
+		RequestBody: `{"hi": "hello"}`,
+		Headers:     nil,
+	}
+	var in structpb.Struct
+	b, _ := json.Marshal(req)
+	protojson.Unmarshal(b, &in)
+	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_CALL_ENDPOINT"}}
+	op, err := restOp.Execute([]*structpb.Struct{&in})
+	fmt.Printf("\n op :%v, err:%s", op, err)
 }

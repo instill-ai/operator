@@ -12,6 +12,7 @@ import (
 	"github.com/instill-ai/operator/pkg/base64"
 	"github.com/instill-ai/operator/pkg/json"
 	"github.com/instill-ai/operator/pkg/pipeline"
+	"github.com/instill-ai/operator/pkg/rest"
 	"github.com/instill-ai/operator/pkg/textextraction"
 )
 
@@ -26,6 +27,7 @@ type Operator struct {
 	textExtractionOperator base.IOperator
 	pipelineOperator       base.IOperator
 	jsonOperator           base.IOperator
+	restOperator           base.IOperator
 }
 
 type OperatorOptions struct {
@@ -33,6 +35,7 @@ type OperatorOptions struct {
 	TextExtraction textextraction.OperatorOptions
 	Pipeline       pipeline.OperatorOptions
 	JSON           json.OperatorOptions
+	REST           rest.OperatorOptions
 }
 
 func Init(logger *zap.Logger, options OperatorOptions) base.IOperator {
@@ -41,6 +44,7 @@ func Init(logger *zap.Logger, options OperatorOptions) base.IOperator {
 		textExtractionOperator := textextraction.Init(logger, options.TextExtraction)
 		pipelineOperator := pipeline.Init(logger, options.Pipeline)
 		jsonOperator := json.Init(logger, options.JSON)
+		restOperator := rest.Init(logger, options.REST)
 
 		operator = &Operator{
 			BaseOperator:           base.BaseOperator{Logger: logger},
@@ -48,6 +52,7 @@ func Init(logger *zap.Logger, options OperatorOptions) base.IOperator {
 			textExtractionOperator: textExtractionOperator,
 			pipelineOperator:       pipelineOperator,
 			jsonOperator:           jsonOperator,
+			restOperator:           restOperator,
 		}
 		for _, uid := range base64Operator.ListOperatorDefinitionUids() {
 			def, err := base64Operator.GetOperatorDefinitionByUid(uid)
@@ -89,6 +94,16 @@ func Init(logger *zap.Logger, options OperatorOptions) base.IOperator {
 				logger.Warn(err.Error())
 			}
 		}
+		for _, uid := range restOperator.ListOperatorDefinitionUids() {
+			def, err := restOperator.GetOperatorDefinitionByUid(uid)
+			if err != nil {
+				logger.Error(err.Error())
+			}
+			err = operator.AddOperatorDefinition(uid, def.GetId(), def)
+			if err != nil {
+				logger.Warn(err.Error())
+			}
+		}
 	})
 	return operator
 }
@@ -103,6 +118,8 @@ func (o *Operator) CreateExecution(defUid uuid.UUID, config *structpb.Struct, lo
 		return o.pipelineOperator.CreateExecution(defUid, config, logger)
 	case o.jsonOperator.HasUid(defUid):
 		return o.jsonOperator.CreateExecution(defUid, config, logger)
+	case o.restOperator.HasUid(defUid):
+		return o.restOperator.CreateExecution(defUid, config, logger)
 	default:
 		return nil, fmt.Errorf("no operator uid: %s", defUid)
 	}
