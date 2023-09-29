@@ -33,6 +33,9 @@ func BytesToText(contents []byte, contentType string) (string, error) {
 		case "text/html":
 			return html2text.FromString(string(contents), html2text.Options{TextOnly: true})
 		default:
+			if err != nil {
+				return "", err
+			}
 			return "", errors.New("unsupported content type")
 		}
 	}
