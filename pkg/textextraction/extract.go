@@ -36,7 +36,7 @@ func BytesToText(contents []byte, contentType string) (string, error) {
 			if err != nil {
 				return "", err
 			}
-			return "", errors.New("unsupported content type")
+			return "", errors.New("unsupported content type" + contentType)
 		}
 	}
 	return res.Body, nil
