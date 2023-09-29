@@ -13,6 +13,7 @@ import (
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/component/pkg/configLoader"
+	"github.com/instill-ai/operator/pkg/base64"
 )
 
 const (
@@ -115,6 +116,10 @@ func (c *Operation) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 		case taskExtractFromFile:
 			obj := FromFile{}
 			err := base.ConvertFromStructpb(input, &obj)
+			if err != nil {
+				return nil, err
+			}
+			obj.FileContents, err = base64.Decode(obj.FileContents)
 			if err != nil {
 				return nil, err
 			}
