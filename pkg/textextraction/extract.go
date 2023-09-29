@@ -27,19 +27,18 @@ func BytesToText(contents []byte, contentType string) (string, error) {
 		return "", errors.New("empty content")
 	}
 	res, err := docconv.Convert(bytes.NewReader(contents), contentType, true)
-	if err != nil || res == nil || len(res.Body) == 0 {
-		//fallbacks
-		switch contentType {
-		case "text/html":
-			return html2text.FromString(string(contents), html2text.Options{TextOnly: true})
-		default:
-			if err != nil {
-				return "", err
-			}
-			return "", errors.New("unsupported content type: " + contentType)
-		}
+	if res != nil && len(res.Body) > 0 {
+		return res.Body, nil
 	}
-	return res.Body, nil
+	//fallbacks
+	switch contentType {
+	case "text/html":
+		return html2text.FromString(string(contents), html2text.Options{TextOnly: true})
+	}
+	if err != nil {
+		return "", err
+	}
+	return "", errors.New("unsupported content type: " + contentType)
 }
 
 func PathToText(path string) (string, error) {

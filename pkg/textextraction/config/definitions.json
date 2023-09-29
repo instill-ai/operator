@@ -121,7 +121,7 @@
                                   "type": "string"
                                 },
                                 "file_contents": {
-                                  "title": "File Contents",
+                                  "title": "File Contents (base64 encoded string)",
                                   "type": "string"
                                 },
                                 "task": {

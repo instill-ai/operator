@@ -65,7 +65,7 @@ func TestTextExtraction(t *testing.T) {
 	path := "test_artifacts/resume.pdf"
 	file, _ := ioutil.ReadFile(path)
 	fileReq := textextraction.FromFile{
-		FileContents: string(file),
+		FileContents: base64.Encode(string(file)),
 		ContentType:  "application/pdf",
 	}
 	var in structpb.Struct
