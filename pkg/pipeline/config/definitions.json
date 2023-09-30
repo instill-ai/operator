@@ -1,10 +1,10 @@
 [
   {
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/start-operator",
-    "icon": "start-operator.svg",
+    "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-start",
+    "icon": "op-start.svg",
     "icon_url": "",
-    "id": "start-operator",
+    "id": "op-start",
     "public": true,
     "spec": {
       "component_specification": {
@@ -62,10 +62,10 @@
   },
   {
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/end-operator",
-    "icon": "end-operator.svg",
+    "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-end",
+    "icon": "op-end.svg",
     "icon_url": "",
-    "id": "end-operator",
+    "id": "op-end",
     "public": true,
     "spec": {
       "component_specification": {
