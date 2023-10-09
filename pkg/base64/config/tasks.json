@@ -1,0 +1,66 @@
+{
+  "TASK_DECODE": {
+    "input": {
+      "properties": {
+        "data": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "Data",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "properties": {
+        "data": {
+          "instillFormat": "text",
+          "title": "Data",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "type": "object"
+    }
+  },
+  "TASK_ENCODE": {
+    "input": {
+      "properties": {
+        "data": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "Data",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "properties": {
+        "data": {
+          "instillFormat": "text",
+          "title": "Data",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "type": "object"
+    }
+  }
+}

@@ -1,66 +1,8 @@
 [
   {
-    "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-start",
-    "icon": "op-start.svg",
-    "icon_url": "",
-    "id": "op-start",
-    "public": true,
-    "spec": {
-      "component_specification": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "additionalProperties": false,
-        "properties": {
-          "input": {
-            "type": "object"
-          },
-          "metadata": {
-            "additionalProperties": false,
-            "patternProperties": {
-              "^[a-zA-Z_][a-zA-Z_0-9]*$": {
-                "properties": {
-                  "description": {
-                    "type": "string"
-                  },
-                  "title": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "description": "Data Type",
-                    "enum": [
-                      "integer",
-                      "integer_array",
-                      "number",
-                      "number_array",
-                      "boolean",
-                      "boolean_array",
-                      "text",
-                      "text_array",
-                      "image",
-                      "image_array",
-                      "audio",
-                      "audio_array",
-                      "video",
-                      "video_array"
-                    ],
-                    "title": "Type"
-                  }
-                },
-                "type": "object"
-              }
-            },
-            "type": "object"
-          }
-        },
-        "title": "Start Operator Component Spec",
-        "type": "object"
-      }
-    },
-    "title": "Start",
-    "tombstone": false,
-    "uid": "2ac8be70-0f7a-4b61-a33d-098b8acfa6f3"
-  },
-  {
+    "available_tasks": [
+      "default"
+    ],
     "custom": false,
     "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-end",
     "icon": "op-end.svg",
