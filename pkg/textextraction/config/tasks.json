@@ -1,0 +1,76 @@
+{
+  "TASK_EXTRACT_FROM_FILE": {
+    "input": {
+      "properties": {
+        "content_type": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "Content Type",
+          "type": "string"
+        },
+        "file_contents": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "File Contents (base64 encoded string)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "file_contents",
+        "content_type"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "properties": {
+        "text": {
+          "instillFormat": "text",
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "type": "object"
+    }
+  },
+  "TASK_EXTRACT_FROM_PATH": {
+    "input": {
+      "properties": {
+        "path": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "properties": {
+        "text": {
+          "instillFormat": "text",
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "TASK_GET_VALUE": {
+    "input": {
+      "properties": {
+        "json_string": {
+          "title": "JSON String",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "json_string"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "properties": {
+        "result": {
+          "title": "Result"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "type": "object"
+    }
+  }
+}
