@@ -1,0 +1,30 @@
+{
+    "TASK_DOWNLOD_FROM_URL": {
+      "input": {
+        "properties": {
+            "url": {
+                "title": "URL",
+                "type": "string"
+            }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "text": {
+            "instillFormat": "text",
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "type": "object"
+      }
+    }
+  }
+  
