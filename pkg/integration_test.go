@@ -22,38 +22,38 @@ import (
 )
 
 var (
-	base64Oper       base.IExecution
+	o                base.IOperator
+	config           *structpb.Struct
+	base64Op         base.IExecution
 	textExtractionOp base.IExecution
 	jsonOp           base.IExecution
 	restOp           base.IExecution
 	downloadURLOp    base.IExecution
 )
 
-func init() {
-	config := &structpb.Struct{
-		Fields: map[string]*structpb.Value{}}
-	o := Init(nil)
-	getUUID := func(id string) uuid.UUID {
-		op, _ := o.GetOperatorDefinitionByID(id)
-		u, _ := uuid.FromString(op.Uid)
-		return u
-	}
-	//base64Oper, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[0], config, nil)
-	//textExtractionOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[1], config, nil)
-	//jsonOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[4], config, nil)
-	//restOp, _ = o.CreateExecution(o.ListOperatorDefinitionUids()[5], config, nil)
+func getUUID(id string) uuid.UUID {
+	op, _ := operator.GetOperatorDefinitionByID(id)
+	u, _ := uuid.FromString(op.Uid)
+	return u
+}
 
-	downloadURLOp, _ = o.CreateExecution(getUUID("op-download"), "DOWNLOAD_FROM_URL", config, nil)
+func init() {
+	config = &structpb.Struct{
+		Fields: map[string]*structpb.Value{}}
+	o = Init(nil)
 }
 
 func TestBase64(t *testing.T) {
+
 	file, _ := ioutil.ReadFile("test_artifacts/image.jpg")
 	req := base64.Base64{Data: string(file)}
 	var in structpb.Struct
 	b, _ := json.Marshal(req)
 	protojson.Unmarshal(b, &in)
+
+	base64Op, _ = o.CreateExecution(getUUID("op-base64"), "TASK_ENCODE", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_ENCODE"}}
-	op, err := base64Oper.Execute([]*structpb.Struct{&in})
+	op, err := base64Op.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
 
 	b, _ = json.Marshal(op)
@@ -61,8 +61,10 @@ func TestBase64(t *testing.T) {
 	b, _ = json.Marshal(req)
 	fmt.Printf("\n\n bytes: %s", req.Data)
 	protojson.Unmarshal(b, &in)
+
+	base64Op, _ = o.CreateExecution(getUUID("op-base64"), "TASK_DECODE", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_DECODE"}}
-	op, err = base64Oper.Execute([]*structpb.Struct{&in})
+	op, err = base64Op.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
 
 	b, _ = json.Marshal(op)
@@ -80,6 +82,8 @@ func TestTextExtraction(t *testing.T) {
 	var in structpb.Struct
 	b, _ := json.Marshal(fileReq)
 	protojson.Unmarshal(b, &in)
+
+	textExtractionOp, _ = o.CreateExecution(getUUID("op-textextraction"), "TASK_EXTRACT_FROM_FILE", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_FILE"}}
 	op, err := textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -87,6 +91,8 @@ func TestTextExtraction(t *testing.T) {
 	pathReq := textextraction.FromPath{FilePath: path}
 	b, _ = json.Marshal(pathReq)
 	protojson.Unmarshal(b, &in)
+
+	textExtractionOp, _ = o.CreateExecution(getUUID("op-textextraction"), "TASK_EXTRACT_FROM_PATH", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
 	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -95,6 +101,7 @@ func TestTextExtraction(t *testing.T) {
 	pathReq = textextraction.FromPath{FilePath: webPath}
 	b, _ = json.Marshal(pathReq)
 	protojson.Unmarshal(b, &in)
+	textExtractionOp, _ = o.CreateExecution(getUUID("op-textextraction"), "TASK_EXTRACT_FROM_PATH", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
 	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -134,6 +141,8 @@ func TestJSON(t *testing.T) {
 		t.Run(test.input.Path, func(t *testing.T) {
 			b, _ := json.Marshal(test.input)
 			protojson.Unmarshal(b, &in)
+
+			jsonOp, _ = o.CreateExecution(getUUID("op-json"), "TASK_GET_VALUE", config, nil)
 			in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_GET_VALUE"}}
 			op, err := jsonOp.Execute([]*structpb.Struct{&in})
 			fmt.Printf("\n op :%v, err:%s \n", op, err)
@@ -144,12 +153,14 @@ func TestJSON(t *testing.T) {
 func TestREST(t *testing.T) {
 	var in structpb.Struct
 
+	restOp, _ = o.CreateExecution(getUUID("op-rest"), "TASK_CALL_ENDPOINT", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_CALL_ENDPOINT"}}
 	op, err := restOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
 }
 
 func TestDownloadURL(t *testing.T) {
+
 	tests := []struct {
 		Name           string
 		Input          downloadurl.DownloadInput
@@ -170,6 +181,7 @@ func TestDownloadURL(t *testing.T) {
 			b, _ := json.Marshal(test.Input)
 			protojson.Unmarshal(b, &in)
 
+			downloadURLOp, _ = o.CreateExecution(getUUID("op-download"), "DOWNLOAD_FROM_URL", config, nil)
 			in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "DOWNLOAD_FROM_URL"}}
 
 			op, err := downloadURLOp.Execute([]*structpb.Struct{&in})
