@@ -1,21 +1,23 @@
-package download
+package downloadurl
 
 import (
 	_ "embed"
-	"fmt"	
-	"github.com/instill-ai/component/pkg/base"
-	"google.golang.org/protobuf/types/known/structpb"
+	"fmt"
 	"sync"
 
-	"io/ioutil"
+	"github.com/instill-ai/component/pkg/base"
+	"google.golang.org/protobuf/types/known/structpb"
+
+	"encoding/base64"
+	"io"
+	"net/http"
+
 	"github.com/gofrs/uuid"
 	"go.uber.org/zap"
-	"encoding/base64"
-	"net/http"
 )
 
 const (
-	download = "DOWNLOAD"
+	download = "DOWNLOAD_FROM_URL"
 )
 
 var (
@@ -44,6 +46,7 @@ func Init(logger *zap.Logger) base.IOperator {
 		}
 		err := operator.LoadOperatorDefinitions(definitionsJSON, tasksJSON)
 		if err != nil {
+
 			logger.Fatal(err.Error())
 		}
 	})
@@ -56,19 +59,18 @@ func (o *Operator) CreateExecution(defUID uuid.UUID, task string, config *struct
 	return e, nil
 }
 
-
 type DownloadInput struct {
-	URL         string            `json:"url"`
+	URL string `json:"url"`
 }
 
-func DownloadImageAsBase64(url string) (string, error) {
+func DownloadAsBase64(url string) (string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
 		return "", fmt.Errorf("error getting image: %v", err)
 	}
 	defer resp.Body.Close()
 
-	data, err := ioutil.ReadAll(resp.Body)
+	data, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", fmt.Errorf("error reading image: %v", err)
 	}
@@ -88,7 +90,7 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 			if err != nil {
 				return nil, err
 			}
-			
+
 		default:
 			return nil, fmt.Errorf("not supported task: %s", e.Task)
 		}

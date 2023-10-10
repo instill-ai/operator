@@ -1,4 +1,4 @@
-package download
+package downloadurl
 
 import (
 	"testing"
@@ -21,7 +21,7 @@ func TestDownload(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.Name, func(t *testing.T) {
-			img, _ := DownloadImageAsBase64(test.Input)
+			img, _ := DownloadAsBase64(test.Input)
 			assert.Equal(t, test.ExpectedOutput, img)
 		})
 	}
