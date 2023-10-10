@@ -9,12 +9,12 @@ import (
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
+	"github.com/instill-ai/operator/pkg/downloadurl"
 	"github.com/instill-ai/operator/pkg/end"
 	"github.com/instill-ai/operator/pkg/json"
 	"github.com/instill-ai/operator/pkg/rest"
 	"github.com/instill-ai/operator/pkg/start"
 	"github.com/instill-ai/operator/pkg/textextraction"
-	"github.com/instill-ai/operator/pkg/downloadurl"
 )
 
 var (
@@ -43,6 +43,10 @@ func Init(logger *zap.Logger) base.IOperator {
 
 	})
 	return operator
+}
+
+func (o *Operator) GetOperatorUIDMap() map[uuid.UUID]base.IOperator {
+	return o.operatorUIDMap
 }
 
 func (o *Operator) ImportDefinitions(op base.IOperator) {
