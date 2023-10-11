@@ -45,10 +45,6 @@ func Init(logger *zap.Logger) base.IOperator {
 	return operator
 }
 
-func (o *Operator) GetOperatorUIDMap() map[uuid.UUID]base.IOperator {
-	return o.operatorUIDMap
-}
-
 func (o *Operator) ImportDefinitions(op base.IOperator) {
 	for _, v := range op.ListOperatorDefinitions() {
 		err := o.AddOperatorDefinition(v)
