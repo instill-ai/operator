@@ -1,7 +1,7 @@
 [
   {
     "available_tasks": [
-      "default"
+      "TASK_START"
     ],
     "custom": false,
     "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-start",

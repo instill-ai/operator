@@ -1,5 +1,5 @@
 {
-  "default": {
+  "TASK_START": {
     "input": {
       "type": "object"
     },
