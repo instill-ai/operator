@@ -18,11 +18,6 @@ func TestEncode(t *testing.T) {
 			Input:          "Hello, World!",
 			ExpectedOutput: "SGVsbG8sIFdvcmxkIQ==",
 		},
-		{
-			Name:           "already encoded string",
-			Input:          "SGVsbG8sIFdvcmxkIQ==",
-			ExpectedOutput: "SGVsbG8sIFdvcmxkIQ==",
-		},
 	}
 
 	for _, test := range tests {

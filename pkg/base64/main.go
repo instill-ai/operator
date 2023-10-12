@@ -97,11 +97,6 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 }
 
 func Encode(str string) string {
-	_, err := base64.StdEncoding.DecodeString(str)
-	if err == nil {
-		//already encoded
-		return str
-	}
 	return base64.StdEncoding.EncodeToString([]byte(str))
 }
 
