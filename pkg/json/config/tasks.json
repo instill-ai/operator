@@ -1,30 +1,64 @@
 {
-  "TASK_GET_VALUE": {
+  "TASK_MARSHAL": {
     "input": {
       "properties": {
-        "json_string": {
-          "title": "JSON String",
-          "type": "string"
-        },
-        "path": {
-          "title": "Path",
-          "type": "string"
+        "object": {
+          "instillFormat": "object",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "Object",
+          "type": "object"
         }
       },
       "required": [
-        "path",
-        "json_string"
+        "object"
       ],
       "type": "object"
     },
     "output": {
       "properties": {
-        "result": {
-          "title": "Result"
+        "string": {
+          "instillFormat": "text",
+          "title": "Data",
+          "type": "string"
         }
       },
       "required": [
-        "result"
+        "string"
+      ],
+      "type": "object"
+    }
+  },
+  "TASK_UNMARSHAL": {
+    "input": {
+      "properties": {
+        "string": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "title": "String",
+          "type": "string"
+        }
+      },
+      "required": [
+        "string"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "properties": {
+        "object": {
+          "instillFormat": "object",
+          "title": "Object",
+          "type": "object"
+        }
+      },
+      "required": [
+        "object"
       ],
       "type": "object"
     }

@@ -5,7 +5,7 @@ go 1.19
 require (
 	code.sajari.com/docconv v1.3.7
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.5.0-alpha.0.20231011164605-745a8446e5bd
+	github.com/instill-ai/component v0.5.0-alpha.0.20231011175850-6e15dc306543
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.26.0
