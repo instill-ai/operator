@@ -2,7 +2,6 @@ package json
 
 import (
 	_ "embed"
-	"encoding/json"
 	"fmt"
 	"sync"
 
@@ -12,12 +11,11 @@ import (
 	"google.golang.org/protobuf/types/known/structpb"
 
 	"github.com/instill-ai/component/pkg/base"
-
-	om "github.com/instill-ai/component/pkg/objectmapper"
 )
 
 const (
-	getValue = "TASK_GET_VALUE"
+	marshal   = "TASK_MARSHAL"
+	unmarshal = "TASK_UNMARSHAL"
 )
 
 var (
@@ -35,15 +33,6 @@ type Operator struct {
 
 type Execution struct {
 	base.Execution
-}
-
-type GetValueInput struct {
-	Path       string `json:"path"`
-	JSONString string `json:"json_string"`
-}
-
-type GetValueRes struct {
-	Result any `json:"result"`
 }
 
 func Init(logger *zap.Logger) base.IOperator {
@@ -71,31 +60,22 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 	outputs := []*structpb.Struct{}
 
 	for _, input := range inputs {
-		output := structpb.Struct{}
+		output := structpb.Struct{Fields: make(map[string]*structpb.Value)}
 		switch e.Task {
-		case getValue:
-			getValueStruct := GetValueInput{}
-			err := base.ConvertFromStructpb(input, &getValueStruct)
+		case marshal:
+			b, err := protojson.Marshal(input.Fields["object"])
 			if err != nil {
 				return nil, err
 			}
-			var obj map[string]interface{}
-			err = json.Unmarshal([]byte(getValueStruct.JSONString), &obj)
+			output.Fields["string"] = structpb.NewStringValue(string(b))
+		case unmarshal:
+			obj := structpb.Struct{}
+			err := protojson.Unmarshal([]byte(input.Fields["string"].GetStringValue()), &obj)
 			if err != nil {
 				return nil, err
 			}
-			res, err := om.GetSrcValueByTag(obj, getValueStruct.Path)
-			if err != nil {
-				return nil, err
-			}
-			outputJson, err := json.Marshal(GetValueRes{Result: res})
-			if err != nil {
-				return nil, err
-			}
-			err = protojson.Unmarshal(outputJson, &output)
-			if err != nil {
-				return nil, err
-			}
+			output.Fields["object"] = structpb.NewStructValue(&obj)
+
 		default:
 			return nil, fmt.Errorf("not supported task: %s", e.Task)
 		}

@@ -1,7 +1,8 @@
 [
   {
     "available_tasks": [
-      "TASK_GET_VALUE"
+      "TASK_MARSHAL",
+      "TASK_UNMARSHAL"
     ],
     "custom": false,
     "documentation_url": "https://www.instill.tech/docs/vdp/operators/json",
