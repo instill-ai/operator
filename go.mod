@@ -5,7 +5,7 @@ go 1.19
 require (
 	code.sajari.com/docconv v1.3.7
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.5.0-alpha.0.20231011175850-6e15dc306543
+	github.com/instill-ai/component v0.6.0-alpha
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.26.0
@@ -37,9 +37,9 @@ require (
 	github.com/santhosh-tekuri/jsonschema/v5 v5.3.0 // indirect
 	github.com/ssor/bom v0.0.0-20170718123548-6386211fdfcf // indirect
 	go.uber.org/multierr v1.10.0 // indirect
-	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.8.0 // indirect
-	golang.org/x/text v0.9.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	google.golang.org/genproto v0.0.0-20230530153820-e85fd2cbaebc // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20230530153820-e85fd2cbaebc // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230530153820-e85fd2cbaebc // indirect
