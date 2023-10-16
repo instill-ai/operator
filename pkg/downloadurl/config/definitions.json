@@ -1,7 +1,7 @@
 [
   {
     "available_tasks": [
-      "TASK_DOWNLOAD_FROM_URL"
+      "TASK_DOWNLOAD_BASE64"
     ],
     "custom": false,
     "documentation_url": "https://www.instill.tech/docs/vdp/operators/download",

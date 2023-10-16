@@ -6,9 +6,11 @@ import (
 	"sync"
 
 	"github.com/instill-ai/component/pkg/base"
+	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/types/known/structpb"
 
 	"encoding/base64"
+	"encoding/json"
 	"io"
 	"net/http"
 
@@ -17,7 +19,7 @@ import (
 )
 
 const (
-	download = "DOWNLOAD_FROM_URL"
+	download = "TASK_DOWNLOAD_BASE64"
 )
 
 var (
@@ -59,8 +61,9 @@ func (o *Operator) CreateExecution(defUID uuid.UUID, task string, config *struct
 	return e, nil
 }
 
-type DownloadInput struct {
-	URL string `json:"url"`
+type Base64Download struct {
+	URL  string `json:"url"`
+	Data string `json:"data"`
 }
 
 func DownloadAsBase64(url string) (string, error) {
@@ -82,11 +85,24 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 	outputs := []*structpb.Struct{}
 
 	for _, input := range inputs {
-		var output *structpb.Struct
+		output := structpb.Struct{}
 		switch e.Task {
 		case download:
-			downloadInput := DownloadInput{}
+			downloadInput := Base64Download{}
 			err := base.ConvertFromStructpb(input, &downloadInput)
+			if err != nil {
+				return nil, err
+			}
+
+			downloadInput.Data, err = DownloadAsBase64(downloadInput.URL)
+			if err != nil {
+				return nil, err
+			}
+			outputJson, err := json.Marshal(downloadInput)
+			if err != nil {
+				return nil, err
+			}
+			err = protojson.Unmarshal(outputJson, &output)
 			if err != nil {
 				return nil, err
 			}
@@ -94,7 +110,7 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 		default:
 			return nil, fmt.Errorf("not supported task: %s", e.Task)
 		}
-		outputs = append(outputs, output)
+		outputs = append(outputs, &output)
 	}
 	return outputs, nil
 }

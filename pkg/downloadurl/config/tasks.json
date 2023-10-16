@@ -1,5 +1,5 @@
 {
-  "TASK_DOWNLOAD_FROM_URL": {
+  "TASK_DOWNLOAD_BASE64": {
     "input": {
       "properties": {
         "url": {
