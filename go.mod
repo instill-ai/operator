@@ -2,8 +2,6 @@ module github.com/instill-ai/operator
 
 go 1.21
 
-toolchain go1.21.3
-
 require (
 	code.sajari.com/docconv v1.3.7
 	github.com/gofrs/uuid v4.4.0+incompatible
