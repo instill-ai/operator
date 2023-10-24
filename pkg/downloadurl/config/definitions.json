@@ -1,0 +1,16 @@
+[
+  {
+    "available_tasks": [
+      "TASK_DOWNLOAD_BASE64"
+    ],
+    "custom": false,
+    "documentation_url": "https://www.instill.tech/docs/vdp/operators/download",
+    "icon": "download.svg",
+    "icon_url": "",
+    "id": "op-download",
+    "public": true,
+    "spec": {},
+    "title": "DOWNLOAD",
+    "uid": "55e6ac56-c40c-4683-9129-f9cc08eca328"
+  }
+]
