@@ -7,7 +7,7 @@ toolchain go1.21.3
 require (
 	code.sajari.com/docconv v1.3.7
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.6.0-alpha.0.20231024160103-948e5e59f1ed
+	github.com/instill-ai/component v0.6.0-alpha.0.20231024161013-a871a2d3dc89
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.26.0
