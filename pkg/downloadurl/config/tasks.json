@@ -3,12 +3,18 @@
     "input": {
       "properties": {
         "url": {
+          "instillFormat": "text",
+          "instillUpstreamTypes": [
+            "value",
+            "reference",
+            "template"
+          ],
           "title": "URL",
           "type": "string"
         }
       },
       "required": [
-        "path"
+        "url"
       ],
       "type": "object"
     },

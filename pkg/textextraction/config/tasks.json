@@ -48,7 +48,8 @@
           "instillFormat": "text",
           "instillUpstreamTypes": [
             "value",
-            "reference"
+            "reference",
+            "template"
           ],
           "title": "Path",
           "type": "string"
