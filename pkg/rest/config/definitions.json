@@ -11,6 +11,7 @@
     "public": true,
     "spec": {},
     "title": "REST",
+    "tombstone": true,
     "uid": "0dd51593-a737-40de-b899-e22cc5f8aa19"
   }
 ]
