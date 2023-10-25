@@ -1,9 +1,18 @@
 {
   "TASK_EXTRACT_FROM_FILE": {
     "input": {
+      "description": "Input",
+      "instillEditOnNodeFields": [
+        "file_contents",
+        "content_type"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "content_type": {
+          "description": "Content type",
           "instillFormat": "text",
+          "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
             "reference"
@@ -12,12 +21,14 @@
           "type": "string"
         },
         "file_contents": {
+          "description": "File contents (base64 encoded string)",
           "instillFormat": "text",
+          "instillUIOrder": 1,
           "instillUpstreamTypes": [
             "value",
             "reference"
           ],
-          "title": "File Contents (base64 encoded string)",
+          "title": "File Contents",
           "type": "string"
         }
       },
@@ -25,12 +36,21 @@
         "file_contents",
         "content_type"
       ],
+      "title": "Input",
       "type": "object"
     },
     "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "text"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "text": {
+          "description": "Text",
           "instillFormat": "text",
+          "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
         }
@@ -38,14 +58,23 @@
       "required": [
         "text"
       ],
+      "title": "Output",
       "type": "object"
     }
   },
   "TASK_EXTRACT_FROM_PATH": {
     "input": {
+      "description": "Input",
+      "instillEditOnNodeFields": [
+        "path"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "path": {
+          "description": "File URL path",
           "instillFormat": "text",
+          "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
             "reference",
@@ -58,12 +87,21 @@
       "required": [
         "path"
       ],
+      "title": "Input",
       "type": "object"
     },
     "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "text"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "text": {
+          "description": "Text",
           "instillFormat": "text",
+          "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
         }
@@ -71,6 +109,7 @@
       "required": [
         "text"
       ],
+      "title": "Output",
       "type": "object"
     }
   }
