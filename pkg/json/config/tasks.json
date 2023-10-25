@@ -1,13 +1,22 @@
 {
   "TASK_MARSHAL": {
     "input": {
+      "description": "Input",
+      "instillEditOnNodeFields": [
+        "object"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "object": {
+          "description": "Json object to be marshaled",
+          "instillEditOnNodeFields": [],
           "instillFormat": "object",
+          "instillUIOrder": 0,
           "instillUpstreamTypes": [
-            "value",
             "reference"
           ],
+          "required": [],
           "title": "Object",
           "type": "object"
         }
@@ -15,12 +24,21 @@
       "required": [
         "object"
       ],
+      "title": "Input",
       "type": "object"
     },
     "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "string"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "string": {
+          "description": "Data",
           "instillFormat": "text",
+          "instillUIOrder": 0,
           "title": "Data",
           "type": "string"
         }
@@ -28,14 +46,23 @@
       "required": [
         "string"
       ],
+      "title": "Output",
       "type": "object"
     }
   },
   "TASK_UNMARSHAL": {
     "input": {
+      "description": "Input",
+      "instillEditOnNodeFields": [
+        "string"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "string": {
+          "description": "Json string to be unmarshaled",
           "instillFormat": "text",
+          "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
             "reference"
@@ -47,12 +74,23 @@
       "required": [
         "string"
       ],
+      "title": "Input",
       "type": "object"
     },
     "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "object"
+      ],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "properties": {
         "object": {
+          "description": "Object",
+          "instillEditOnNodeFields": [],
           "instillFormat": "object",
+          "instillUIOrder": 0,
+          "required": [],
           "title": "Object",
           "type": "object"
         }
@@ -60,6 +98,7 @@
       "required": [
         "object"
       ],
+      "title": "Output",
       "type": "object"
     }
   }

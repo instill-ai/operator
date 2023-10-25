@@ -2,15 +2,25 @@
   "TASK_END": {
     "input": {
       "additionalProperties": false,
+      "description": "Input",
+      "instillEditOnNodeFields": [],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
       "patternProperties": {
         "^[a-zA-Z_][a-zA-Z_0-9]*$": {
+          "description": "Arbitrary data",
           "instillFormat": "*",
+          "instillUIOrder": 0,
           "instillUpstreamTypes": [
+            "value",
             "reference",
             "template"
-          ]
+          ],
+          "title": "Key"
         }
       },
+      "required": [],
+      "title": "Input",
       "type": "object"
     },
     "metadata": {
@@ -51,6 +61,12 @@
       "type": "object"
     },
     "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
+      "required": [],
+      "title": "Output",
       "type": "object"
     }
   }

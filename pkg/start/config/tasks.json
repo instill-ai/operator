@@ -1,6 +1,12 @@
 {
   "TASK_START": {
     "input": {
+      "description": "Input",
+      "instillEditOnNodeFields": [],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
+      "required": [],
+      "title": "Input",
       "type": "object"
     },
     "metadata": {
@@ -41,6 +47,12 @@
       "type": "object"
     },
     "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [],
+      "instillFormat": "object",
+      "instillUIOrder": 0,
+      "required": [],
+      "title": "Output",
       "type": "object"
     }
   }
