@@ -5,7 +5,7 @@ go 1.21
 require (
 	code.sajari.com/docconv v1.3.7
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.6.1-alpha
+	github.com/instill-ai/component v0.6.1-alpha.0.20231031143033-bafafe960082
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.26.0
@@ -26,6 +26,11 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.2 // indirect
 	github.com/instill-ai/protogen-go v0.3.3-alpha.0.20231019202606-71607ddcd93f // indirect
+	github.com/lestrrat-go/jspointer v0.0.0-20181205001929-82fadba7561c // indirect
+	github.com/lestrrat-go/jsref v0.0.0-20211028120858-c0bcbb5abf20 // indirect
+	github.com/lestrrat-go/option v1.0.0 // indirect
+	github.com/lestrrat-go/pdebug v0.0.0-20210111095411-35b07dbf089b // indirect
+	github.com/lestrrat-go/structinfo v0.0.0-20210312050401-7f8bd69d6acb // indirect
 	github.com/levigross/exp-html v0.0.0-20120902181939-8df60c69a8f5 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/olekukonko/tablewriter v0.0.4 // indirect
