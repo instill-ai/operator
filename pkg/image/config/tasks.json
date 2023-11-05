@@ -1,0 +1,278 @@
+{
+  "TASK_DRAW_CLASSIFICATION": {
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/instill-ai/component/dd7aa52dc2cd5185733543ec0d9171b161cee149/schema.json#/$defs/instill_types/classification",
+      "additionalProperties": {
+        "image": {
+          "description": "Input image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        },
+        "showScore": {
+          "description": "Show model confidence score on each instance",
+          "instillFormat": "boolean",
+          "instillUIOrder": 0,
+          "title": "Show Score",
+          "type": "boolean"
+        }
+      },
+      "description": "Input",
+      "instillUIOrder": 0,
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "image"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "image": {
+          "description": "Output image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_DRAW_DETECTION": {
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/instill-ai/component/dd7aa52dc2cd5185733543ec0d9171b161cee149/schema.json#/$defs/instill_types/detection",
+      "additionalProperties": {
+        "image": {
+          "description": "Input image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        },
+        "showScore": {
+          "description": "Show model confidence score on each instance",
+          "instillFormat": "boolean",
+          "instillUIOrder": 0,
+          "title": "Show Score",
+          "type": "boolean"
+        }
+      },
+      "description": "Input",
+      "instillUIOrder": 0,
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "image"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "image": {
+          "description": "Output image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_DRAW_INSTANCE_SEGMENTATION": {
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/instill-ai/component/dd7aa52dc2cd5185733543ec0d9171b161cee149/schema.json#/$defs/instill_types/instance_segmentation",
+      "additionalProperties": {
+        "image": {
+          "description": "Input image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        },
+        "showScore": {
+          "description": "Show model confidence score on each instance",
+          "instillFormat": "boolean",
+          "instillUIOrder": 0,
+          "title": "Show Score",
+          "type": "boolean"
+        }
+      },
+      "description": "Input",
+      "instillUIOrder": 0,
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "image"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "image": {
+          "description": "Output image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_DRAW_KEYPOINT": {
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/instill-ai/component/dd7aa52dc2cd5185733543ec0d9171b161cee149/schema.json#/$defs/instill_types/keypoint",
+      "additionalProperties": {
+        "image": {
+          "description": "Input image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        },
+        "showScore": {
+          "description": "Show model confidence score on each instance",
+          "instillFormat": "boolean",
+          "instillUIOrder": 0,
+          "title": "Show Score",
+          "type": "boolean"
+        }
+      },
+      "description": "Input",
+      "instillUIOrder": 0,
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "image"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "image": {
+          "description": "Output image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_DRAW_OCR": {
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/instill-ai/component/dd7aa52dc2cd5185733543ec0d9171b161cee149/schema.json#/$defs/instill_types/ocr",
+      "additionalProperties": {
+        "image": {
+          "description": "Input image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        },
+        "showScore": {
+          "description": "Show model confidence score on each instance",
+          "instillFormat": "boolean",
+          "instillUIOrder": 0,
+          "title": "Show Score",
+          "type": "boolean"
+        }
+      },
+      "description": "Input",
+      "instillUIOrder": 0,
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "image"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "image": {
+          "description": "Output image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_DRAW_SEMANTIC_SEGMENTATION": {
+    "input": {
+      "$ref": "https://raw.githubusercontent.com/instill-ai/component/dd7aa52dc2cd5185733543ec0d9171b161cee149/schema.json#/$defs/instill_types/semantic_segmentation",
+      "additionalProperties": {
+        "image": {
+          "description": "Input image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        },
+        "showScore": {
+          "description": "Show model confidence score on each instance",
+          "instillFormat": "boolean",
+          "instillUIOrder": 0,
+          "title": "Show Score",
+          "type": "boolean"
+        }
+      },
+      "description": "Input",
+      "instillUIOrder": 0,
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "image"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "image": {
+          "description": "Output image",
+          "instillFormat": "image",
+          "instillUIOrder": 0,
+          "title": "Image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  }
+}
