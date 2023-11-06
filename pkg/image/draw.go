@@ -252,7 +252,7 @@ func drawSemanticMask(img *image.RGBA, rle string, colorSeed int) error {
 	// Draw the contour
 	for _, pt := range contourPoints {
 		// Scale points as needed for your canvas size
-		dc.DrawPoint(float64(pt.X), float64(pt.Y), 1) // Scale and draw the point
+		dc.DrawPoint(float64(pt.X), float64(pt.Y), 0.5)
 		dc.Fill()
 	}
 
@@ -298,7 +298,7 @@ func drawInstanceMask(img *image.RGBA, bbox *BoundingBox, rle string, colorSeed 
 	dc.SetColor(randomColor(colorSeed, 255))
 	contourPoints := findContour(mask)
 	for _, pt := range contourPoints {
-		dc.DrawPoint(float64(pt.X+bbox.Left), float64(pt.Y+bbox.Top), 1) // Scale and draw the point
+		dc.DrawPoint(float64(pt.X+bbox.Left), float64(pt.Y+bbox.Top), 0.5)
 		dc.Fill()
 	}
 
@@ -321,7 +321,7 @@ func drawSkeleton(img *image.RGBA, kpts []*Keypoint) error {
 	for idx, kpt := range kpts {
 		if kpt.v > 0.5 {
 			dc.SetColor(palette[keypointColorIdx[idx]])
-			dc.DrawPoint(kpt.x, kpt.y, 2) // Scale and draw the point
+			dc.DrawPoint(kpt.x, kpt.y, 2)
 			dc.Fill()
 		}
 	}
@@ -329,7 +329,7 @@ func drawSkeleton(img *image.RGBA, kpts []*Keypoint) error {
 		if kpts[sk[0]-1].v > 0.5 && kpts[sk[1]-1].v > 0.5 {
 			dc.SetColor(palette[keypointLimbColorIdx[idx]])
 			dc.SetLineWidth(2)
-			dc.DrawLine(kpts[sk[0]-1].x, kpts[sk[0]-1].y, kpts[sk[1]-1].x, kpts[sk[1]-1].y) // Scale and draw the point
+			dc.DrawLine(kpts[sk[0]-1].x, kpts[sk[0]-1].y, kpts[sk[1]-1].x, kpts[sk[1]-1].y)
 			dc.Stroke()
 		}
 	}
