@@ -11,6 +11,7 @@ import (
 	"github.com/instill-ai/operator/pkg/base64"
 	"github.com/instill-ai/operator/pkg/downloadurl"
 	"github.com/instill-ai/operator/pkg/end"
+	"github.com/instill-ai/operator/pkg/image"
 	"github.com/instill-ai/operator/pkg/json"
 	"github.com/instill-ai/operator/pkg/start"
 	"github.com/instill-ai/operator/pkg/textextraction"
@@ -39,6 +40,7 @@ func Init(logger *zap.Logger) base.IOperator {
 		operator.(*Operator).ImportDefinitions(json.Init(logger))
 		// operator.(*Operator).ImportDefinitions(rest.Init(logger))
 		operator.(*Operator).ImportDefinitions(downloadurl.Init(logger))
+		operator.(*Operator).ImportDefinitions(image.Init(logger))
 
 	})
 	return operator
