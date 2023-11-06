@@ -6,7 +6,7 @@ require (
 	code.sajari.com/docconv v1.3.7
 	github.com/fogleman/gg v1.3.0
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.6.1-alpha.0.20231106053049-a7d08f3cab53
+	github.com/instill-ai/component v0.6.1-alpha.0.20231106092458-e4a7b537a08e
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.26.0
