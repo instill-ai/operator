@@ -5,12 +5,14 @@
       "instillEditOnNodeFields": [
         "url"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "url": {
           "description": "URL to be downloaded",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
@@ -32,12 +34,11 @@
       "instillEditOnNodeFields": [
         "text"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "text": {
           "description": "Text",
-          "instillFormat": "text",
+          "instillFormat": "text/plain",
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
