@@ -5,12 +5,14 @@
       "instillEditOnNodeFields": [
         "data"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "data": {
           "description": "Base64 string to be decoded",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
@@ -31,12 +33,11 @@
       "instillEditOnNodeFields": [
         "data"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "data": {
           "description": "Data",
-          "instillFormat": "text",
+          "instillFormat": "text/plain",
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"
@@ -55,12 +56,14 @@
       "instillEditOnNodeFields": [
         "data"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "data": {
           "description": "Data to be encoded",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
@@ -81,12 +84,11 @@
       "instillEditOnNodeFields": [
         "data"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "data": {
           "description": "Data",
-          "instillFormat": "text",
+          "instillFormat": "text/plain",
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"

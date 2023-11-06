@@ -5,13 +5,14 @@
       "instillEditOnNodeFields": [
         "object"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "object": {
           "description": "Json object to be marshaled",
+          "instillAcceptFormats": [
+            "object"
+          ],
           "instillEditOnNodeFields": [],
-          "instillFormat": "object",
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "reference"
@@ -32,12 +33,11 @@
       "instillEditOnNodeFields": [
         "string"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "string": {
           "description": "Data",
-          "instillFormat": "text",
+          "instillFormat": "text/plain",
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"
@@ -56,12 +56,14 @@
       "instillEditOnNodeFields": [
         "string"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "string": {
           "description": "Json string to be unmarshaled",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
@@ -82,13 +84,12 @@
       "instillEditOnNodeFields": [
         "object"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "object": {
           "description": "Object",
           "instillEditOnNodeFields": [],
-          "instillFormat": "object",
+          "instillFormat": "application/json",
           "instillUIOrder": 0,
           "required": [],
           "title": "Object",

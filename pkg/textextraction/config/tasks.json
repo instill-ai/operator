@@ -6,12 +6,14 @@
         "file_contents",
         "content_type"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "content_type": {
           "description": "Content type",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
@@ -22,7 +24,10 @@
         },
         "file_contents": {
           "description": "File contents (base64 encoded string)",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 1,
           "instillUpstreamTypes": [
             "value",
@@ -44,12 +49,11 @@
       "instillEditOnNodeFields": [
         "text"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "text": {
           "description": "Text",
-          "instillFormat": "text",
+          "instillFormat": "text/plain",
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
@@ -68,12 +72,14 @@
       "instillEditOnNodeFields": [
         "path"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "path": {
           "description": "File URL path",
-          "instillFormat": "text",
+          "instillAcceptFormats": [
+            "string",
+            "text/*"
+          ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
@@ -95,12 +101,11 @@
       "instillEditOnNodeFields": [
         "text"
       ],
-      "instillFormat": "object",
       "instillUIOrder": 0,
       "properties": {
         "text": {
           "description": "Text",
-          "instillFormat": "text",
+          "instillFormat": "text/plain",
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
