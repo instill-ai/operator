@@ -5,7 +5,7 @@
       "instillUIOrder": 0,
       "properties": {
         "category": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/classification/properties/category",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/classification/properties/category",
           "instillAcceptFormats": [
             "string",
             "text/*"
@@ -29,7 +29,7 @@
           "type": "string"
         },
         "score": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/classification/properties/score",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/classification/properties/score",
           "instillAcceptFormats": [
             "number",
             "integer"
@@ -100,7 +100,7 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/detection/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/detection/properties/objects",
           "instillAcceptFormats": [
             "structured/detection_objects"
           ],
@@ -169,7 +169,7 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/instance_segmentation/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/instance_segmentation/properties/objects",
           "instillAcceptFormats": [
             "structured/instance_segmentation_objects"
           ],
@@ -238,7 +238,7 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/keypoint/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/keypoint/properties/objects",
           "instillAcceptFormats": [
             "structured/keypoint_objects"
           ],
@@ -307,7 +307,7 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/ocr/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/ocr/properties/objects",
           "instillAcceptFormats": [
             "structured/ocr_objects"
           ],
@@ -389,7 +389,7 @@
           "type": "boolean"
         },
         "stuffs": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/a7d08f3cab53b870b3d90a6db7b102f9e31860bc/schema.json#/$defs/instill_types/semantic_segmentation/properties/stuffs",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/semantic_segmentation/properties/stuffs",
           "instillAcceptFormats": [
             "structured/semantic_segmentation_stuffs"
           ],
