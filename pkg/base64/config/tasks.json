@@ -10,8 +10,7 @@
         "data": {
           "description": "Base64 string to be decoded",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
@@ -37,7 +36,7 @@
       "properties": {
         "data": {
           "description": "Data",
-          "instillFormat": "text/plain",
+          "instillFormat": "string",
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"
@@ -61,8 +60,7 @@
         "data": {
           "description": "Data to be encoded",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
@@ -88,7 +86,7 @@
       "properties": {
         "data": {
           "description": "Data",
-          "instillFormat": "text/plain",
+          "instillFormat": "string",
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"

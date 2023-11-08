@@ -37,7 +37,7 @@
       "properties": {
         "string": {
           "description": "Data",
-          "instillFormat": "text/plain",
+          "instillFormat": "string",
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"
@@ -61,8 +61,7 @@
         "string": {
           "description": "Json string to be unmarshaled",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
