@@ -6,7 +6,7 @@ require (
 	code.sajari.com/docconv v1.3.7
 	github.com/fogleman/gg v1.3.0
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.6.1-alpha.0.20231106153938-6032b6ce48ed
+	github.com/instill-ai/component v0.6.1-alpha.0.20231108090255-582dc5f90db9
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/zap v1.26.0
@@ -23,6 +23,7 @@ require (
 	github.com/araddon/dateparse v0.0.0-20200409225146-d820a6159ab1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/set v0.2.1 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gigawattio/window v0.0.0-20180317192513-0f5467e35573 // indirect
 	github.com/go-resty/resty/v2 v2.3.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
