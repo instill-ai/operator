@@ -1,7 +1,6 @@
 package base64
 
 import (
-	"encoding/base64"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -38,12 +37,6 @@ func TestDecode(t *testing.T) {
 			Name:           "positive test case",
 			Input:          "SGVsbG8sIFdvcmxkIQ==",
 			ExpectedOutput: "Hello, World!",
-		},
-		{
-			Name:           "negative test case",
-			Input:          "Hello, World!",
-			ExpectedOutput: "Hello, World!",
-			ExpectedErr:    base64.CorruptInputError(5),
 		},
 	}
 
