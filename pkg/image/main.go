@@ -67,7 +67,7 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 	var base64ByteImg []byte
 	for _, input := range inputs {
 
-		b, err := base64.StdEncoding.DecodeString(input.Fields["image"].GetStringValue())
+		b, err := base64.StdEncoding.DecodeString(base.TrimBase64Mime(input.Fields["image"].GetStringValue()))
 		if err != nil {
 			return nil, err
 		}
