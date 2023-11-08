@@ -7,8 +7,7 @@
         "category": {
           "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/classification/properties/category",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUpstreamTypes": [
             "value",

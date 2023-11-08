@@ -10,8 +10,7 @@
         "url": {
           "description": "URL to be downloaded",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
@@ -38,7 +37,7 @@
       "properties": {
         "text": {
           "description": "Text",
-          "instillFormat": "text/plain",
+          "instillFormat": "string",
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"

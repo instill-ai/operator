@@ -11,8 +11,7 @@
         "content_type": {
           "description": "Content type",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
@@ -25,8 +24,7 @@
         "file_contents": {
           "description": "File contents (base64 encoded string)",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 1,
           "instillUpstreamTypes": [
@@ -53,7 +51,7 @@
       "properties": {
         "text": {
           "description": "Text",
-          "instillFormat": "text/plain",
+          "instillFormat": "string",
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
@@ -77,8 +75,7 @@
         "path": {
           "description": "File URL path",
           "instillAcceptFormats": [
-            "string",
-            "text/*"
+            "string"
           ],
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
@@ -105,7 +102,7 @@
       "properties": {
         "text": {
           "description": "Text",
-          "instillFormat": "text/plain",
+          "instillFormat": "string",
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
