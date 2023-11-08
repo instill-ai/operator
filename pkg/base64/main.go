@@ -101,7 +101,7 @@ func Encode(str string) string {
 }
 
 func Decode(str string) (string, error) {
-	b, err := base64.StdEncoding.DecodeString(str)
+	b, err := base64.StdEncoding.DecodeString(base.TrimBase64Mime(str))
 	if err != nil {
 		return str, err
 	}
