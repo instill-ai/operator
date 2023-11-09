@@ -38,6 +38,7 @@
         "string": {
           "description": "Data",
           "instillFormat": "string",
+          "instillUIMultiline": true,
           "instillUIOrder": 0,
           "title": "Data",
           "type": "string"
@@ -63,6 +64,7 @@
           "instillAcceptFormats": [
             "string"
           ],
+          "instillUIMultiline": true,
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",

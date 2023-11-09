@@ -26,6 +26,7 @@
           "instillAcceptFormats": [
             "string"
           ],
+          "instillUIMultiline": true,
           "instillUIOrder": 1,
           "instillUpstreamTypes": [
             "value",
@@ -52,6 +53,7 @@
         "text": {
           "description": "Text",
           "instillFormat": "string",
+          "instillUIMultiline": true,
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
@@ -103,6 +105,7 @@
         "text": {
           "description": "Text",
           "instillFormat": "string",
+          "instillUIMultiline": true,
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"

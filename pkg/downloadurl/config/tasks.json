@@ -38,6 +38,7 @@
         "text": {
           "description": "Text",
           "instillFormat": "string",
+          "instillUIMultiline": true,
           "instillUIOrder": 0,
           "title": "Text",
           "type": "string"
