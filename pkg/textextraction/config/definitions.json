@@ -5,7 +5,7 @@
       "TASK_EXTRACT_FROM_PATH"
     ],
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/textextraction",
+    "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/textextraction",
     "icon": "textextraction.svg",
     "icon_url": "",
     "id": "op-textextraction",

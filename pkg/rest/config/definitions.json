@@ -4,7 +4,7 @@
       "TASK_CALL_ENDPOINT"
     ],
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/rest",
+    "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/rest",
     "icon": "rest.svg",
     "icon_url": "",
     "id": "op-rest",

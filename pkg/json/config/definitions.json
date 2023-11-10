@@ -5,7 +5,7 @@
       "TASK_UNMARSHAL"
     ],
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/json",
+    "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/json",
     "icon": "json.svg",
     "icon_url": "",
     "id": "op-json",

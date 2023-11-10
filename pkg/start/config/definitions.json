@@ -4,7 +4,7 @@
       "TASK_START"
     ],
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-start",
+    "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/op-start",
     "icon": "op-start.svg",
     "icon_url": "",
     "id": "op-start",
