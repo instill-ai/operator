@@ -8,7 +8,8 @@ require (
 	github.com/gofrs/uuid v4.4.0+incompatible
 	github.com/instill-ai/component v0.6.1-alpha.0.20231109121032-f720e8d61ce7
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056
-	github.com/stretchr/testify v1.8.1
+	github.com/pkoukk/tiktoken-go v0.1.6
+	github.com/stretchr/testify v1.8.2
 	go.uber.org/zap v1.26.0
 	golang.org/x/image v0.13.0
 	google.golang.org/protobuf v1.31.0
@@ -22,12 +23,14 @@ require (
 	github.com/andybalholm/cascadia v1.2.0 // indirect
 	github.com/araddon/dateparse v0.0.0-20200409225146-d820a6159ab1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/dlclark/regexp2 v1.10.0 // indirect
 	github.com/fatih/set v0.2.1 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gigawattio/window v0.0.0-20180317192513-0f5467e35573 // indirect
 	github.com/go-resty/resty/v2 v2.3.0 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.2 // indirect
 	github.com/instill-ai/protogen-go v0.3.3-alpha.0.20231019202606-71607ddcd93f // indirect
 	github.com/lestrrat-go/jspointer v0.0.0-20181205001929-82fadba7561c // indirect
