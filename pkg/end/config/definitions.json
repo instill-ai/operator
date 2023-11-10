@@ -4,7 +4,7 @@
       "TASK_END"
     ],
     "custom": false,
-    "documentation_url": "https://www.instill.tech/docs/vdp/operators/op-end",
+    "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/op-end",
     "icon": "op-end.svg",
     "icon_url": "",
     "id": "op-end",
