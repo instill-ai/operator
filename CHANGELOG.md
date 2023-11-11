@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0-alpha](https://github.com/instill-ai/operator/compare/v0.3.0-alpha...v0.4.0-alpha) (2023-11-11)
+
+
+### Features
+
+* **image:** add operator ([#28](https://github.com/instill-ai/operator/issues/28)) ([83847db](https://github.com/instill-ai/operator/commit/83847dbaf039416821219f8918fb63f244057c5b))
+* **text:** add support for text operator task tokenizer splitter ([#35](https://github.com/instill-ai/operator/issues/35)) ([a1d4888](https://github.com/instill-ai/operator/commit/a1d48882c891b9ea4caa3d6d70bb5e866d0bade9))
+
 ## [0.3.0-alpha](https://github.com/instill-ai/operator/compare/v0.2.0-alpha...v0.3.0-alpha) (2023-10-27)
 
 
