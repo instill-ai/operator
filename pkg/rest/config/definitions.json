@@ -7,7 +7,7 @@
     "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/rest",
     "icon": "rest.svg",
     "icon_url": "",
-    "id": "op-rest",
+    "id": "rest",
     "public": true,
     "spec": {},
     "title": "REST",

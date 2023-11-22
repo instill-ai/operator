@@ -7,7 +7,7 @@
     "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/download",
     "icon": "download.svg",
     "icon_url": "",
-    "id": "op-download",
+    "id": "download",
     "public": true,
     "spec": {},
     "title": "DOWNLOAD",

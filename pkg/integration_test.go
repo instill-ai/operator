@@ -52,7 +52,7 @@ func TestBase64(t *testing.T) {
 	b, _ := json.Marshal(req)
 	protojson.Unmarshal(b, &in)
 
-	base64Op, _ = o.CreateExecution(getUUID("op-base64"), "TASK_ENCODE", config, nil)
+	base64Op, _ = o.CreateExecution(getUUID("base64"), "TASK_ENCODE", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_ENCODE"}}
 	op, err := base64Op.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -63,7 +63,7 @@ func TestBase64(t *testing.T) {
 	fmt.Printf("\n\n bytes: %s", req.Data)
 	protojson.Unmarshal(b, &in)
 
-	base64Op, _ = o.CreateExecution(getUUID("op-base64"), "TASK_DECODE", config, nil)
+	base64Op, _ = o.CreateExecution(getUUID("base64"), "TASK_DECODE", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_DECODE"}}
 	op, err = base64Op.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -84,7 +84,7 @@ func TestTextExtraction(t *testing.T) {
 	b, _ := json.Marshal(fileReq)
 	protojson.Unmarshal(b, &in)
 
-	textExtractionOp, _ = o.CreateExecution(getUUID("op-textextraction"), "TASK_EXTRACT_FROM_FILE", config, nil)
+	textExtractionOp, _ = o.CreateExecution(getUUID("textextraction"), "TASK_EXTRACT_FROM_FILE", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_FILE"}}
 	op, err := textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -93,7 +93,7 @@ func TestTextExtraction(t *testing.T) {
 	b, _ = json.Marshal(pathReq)
 	protojson.Unmarshal(b, &in)
 
-	textExtractionOp, _ = o.CreateExecution(getUUID("op-textextraction"), "TASK_EXTRACT_FROM_PATH", config, nil)
+	textExtractionOp, _ = o.CreateExecution(getUUID("textextraction"), "TASK_EXTRACT_FROM_PATH", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
 	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -102,7 +102,7 @@ func TestTextExtraction(t *testing.T) {
 	pathReq = textextraction.FromPath{FilePath: webPath}
 	b, _ = json.Marshal(pathReq)
 	protojson.Unmarshal(b, &in)
-	textExtractionOp, _ = o.CreateExecution(getUUID("op-textextraction"), "TASK_EXTRACT_FROM_PATH", config, nil)
+	textExtractionOp, _ = o.CreateExecution(getUUID("textextraction"), "TASK_EXTRACT_FROM_PATH", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_EXTRACT_FROM_PATH"}}
 	op, err = textExtractionOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -143,7 +143,7 @@ func TestJSON(t *testing.T) {
 			b, _ := json.Marshal(test.input)
 			protojson.Unmarshal(b, &in)
 
-			jsonOp, _ = o.CreateExecution(getUUID("op-json"), "TASK_GET_VALUE", config, nil)
+			jsonOp, _ = o.CreateExecution(getUUID("json"), "TASK_GET_VALUE", config, nil)
 			in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_GET_VALUE"}}
 			op, err := jsonOp.Execute([]*structpb.Struct{&in})
 			fmt.Printf("\n op :%v, err:%s \n", op, err)
@@ -154,7 +154,7 @@ func TestJSON(t *testing.T) {
 func TestREST(t *testing.T) {
 	var in structpb.Struct
 
-	restOp, _ = o.CreateExecution(getUUID("op-rest"), "TASK_CALL_ENDPOINT", config, nil)
+	restOp, _ = o.CreateExecution(getUUID("rest"), "TASK_CALL_ENDPOINT", config, nil)
 	in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_CALL_ENDPOINT"}}
 	op, err := restOp.Execute([]*structpb.Struct{&in})
 	fmt.Printf("\n op :%v, err:%s", op, err)
@@ -182,7 +182,7 @@ func TestDownloadURL(t *testing.T) {
 			b, _ := json.Marshal(test.Input)
 			protojson.Unmarshal(b, &in)
 
-			downloadURLOp, _ = o.CreateExecution(getUUID("op-download"), "TASK_DOWNLOAD_BASE64", config, nil)
+			downloadURLOp, _ = o.CreateExecution(getUUID("download"), "TASK_DOWNLOAD_BASE64", config, nil)
 			in.Fields["task"] = &structpb.Value{Kind: &structpb.Value_StringValue{StringValue: "TASK_DOWNLOAD_BASE64"}}
 
 			op, err := downloadURLOp.Execute([]*structpb.Struct{&in})
