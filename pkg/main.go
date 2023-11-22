@@ -9,13 +9,11 @@ import (
 
 	"github.com/instill-ai/component/pkg/base"
 	"github.com/instill-ai/operator/pkg/base64"
-	"github.com/instill-ai/operator/pkg/downloadurl"
 	"github.com/instill-ai/operator/pkg/end"
 	"github.com/instill-ai/operator/pkg/image"
 	"github.com/instill-ai/operator/pkg/json"
 	"github.com/instill-ai/operator/pkg/start"
 	"github.com/instill-ai/operator/pkg/text"
-	"github.com/instill-ai/operator/pkg/textextraction"
 )
 
 var (
@@ -23,11 +21,13 @@ var (
 	operator base.IOperator
 )
 
+// Operator is the derived operator
 type Operator struct {
 	base.Operator
 	operatorUIDMap map[uuid.UUID]base.IOperator
 }
 
+// Init initializes the operator
 func Init(logger *zap.Logger) base.IOperator {
 	once.Do(func() {
 		operator = &Operator{
@@ -35,12 +35,9 @@ func Init(logger *zap.Logger) base.IOperator {
 			operatorUIDMap: map[uuid.UUID]base.IOperator{},
 		}
 		operator.(*Operator).ImportDefinitions(base64.Init(logger))
-		operator.(*Operator).ImportDefinitions(textextraction.Init(logger))
 		operator.(*Operator).ImportDefinitions(start.Init(logger))
 		operator.(*Operator).ImportDefinitions(end.Init(logger))
 		operator.(*Operator).ImportDefinitions(json.Init(logger))
-		// operator.(*Operator).ImportDefinitions(rest.Init(logger))
-		operator.(*Operator).ImportDefinitions(downloadurl.Init(logger))
 		operator.(*Operator).ImportDefinitions(image.Init(logger))
 		operator.(*Operator).ImportDefinitions(text.Init(logger))
 
@@ -48,6 +45,7 @@ func Init(logger *zap.Logger) base.IOperator {
 	return operator
 }
 
+// ImportDefinitions imports the operator definitions
 func (o *Operator) ImportDefinitions(op base.IOperator) {
 	for _, v := range op.ListOperatorDefinitions() {
 		err := o.AddOperatorDefinition(v)
@@ -58,6 +56,7 @@ func (o *Operator) ImportDefinitions(op base.IOperator) {
 	}
 }
 
+// CreateExecution creates the derived execution
 func (o *Operator) CreateExecution(defUID uuid.UUID, task string, config *structpb.Struct, logger *zap.Logger) (base.IExecution, error) {
 	return o.operatorUIDMap[defUID].CreateExecution(defUID, task, config, logger)
 }

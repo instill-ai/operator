@@ -6,8 +6,8 @@ import (
 
 const defaultChunkTokenSize = 500
 
-// TokenizerSplitterInput defines the input for the tokenizer splitter task
-type TokenizerSplitterInput struct {
+// SplitByTokenInput defines the input for split by token task
+type SplitByTokenInput struct {
 	// Text: Text to split
 	Text string `json:"text"`
 	// Model: ID of the model to use for tokenization
@@ -16,17 +16,19 @@ type TokenizerSplitterInput struct {
 	ChunkTokenSize *int `json:"chunk_token_size,omitempty"`
 }
 
-// TokenizerSplitterOutput defines the output for the tokenizer splitter task
-type TokenizerSplitterOutput struct {
-	// Texts: Text chunks
+// SplitByTokenOutput defines the output for split by token task
+type SplitByTokenOutput struct {
+	// TokenCount: Number of tokens in the text
 	TokenCount int      `json:"token_count"`
+	// TextChunks: List of text chunks
 	TextChunks []string `json:"text_chunks"`
+	// ChunkNum: Number of text chunks
 	ChunkNum   int      `json:"chunk_num"`
 }
 
-// SplitTextIntoChunks splits text into text chunks based on token size
-func splitTextIntoChunks(input TokenizerSplitterInput) (TokenizerSplitterOutput, error) {
-	output := TokenizerSplitterOutput{}
+// splitTextIntoChunks splits text into text chunks based on token size
+func splitTextIntoChunks(input SplitByTokenInput) (SplitByTokenOutput, error) {
+	output := SplitByTokenOutput{}
 
 	if input.ChunkTokenSize == nil || *input.ChunkTokenSize <= 0 {
 		input.ChunkTokenSize = new(int)
