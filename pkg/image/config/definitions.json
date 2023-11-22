@@ -12,7 +12,7 @@
     "documentation_url": "https://www.instill.tech/docs/latest/vdp/operators/image",
     "icon": "image.svg",
     "icon_url": "",
-    "id": "op-image",
+    "id": "image",
     "public": true,
     "spec": {},
     "title": "Image",
