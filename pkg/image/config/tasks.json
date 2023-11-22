@@ -54,7 +54,8 @@
       },
       "required": [
         "image",
-        "classification"
+        "category",
+        "score"
       ],
       "title": "Input",
       "type": "object"
