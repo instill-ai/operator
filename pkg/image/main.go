@@ -116,7 +116,7 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 
 		output.Fields["image"] = &structpb.Value{
 			Kind: &structpb.Value_StringValue{
-				StringValue: string(base64ByteImg),
+				StringValue: fmt.Sprintf("data:image/jpeg;base64,%s", string(base64ByteImg)),
 			},
 		}
 
