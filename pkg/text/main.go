@@ -15,7 +15,7 @@ import (
 
 const (
 	taskConvertToText string = "TASK_CONVERT_TO_TEXT"
-	taskSplitByToken string = "TASK_SPLIT_BY_TOKEN"
+	taskSplitByToken  string = "TASK_SPLIT_BY_TOKEN"
 )
 
 var (

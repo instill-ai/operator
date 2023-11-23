@@ -10,7 +10,7 @@
         "doc": {
           "description": "Base64 encoded document (PDF, DOC, DOCX, XML, HTML, RTF, etc.) to be converted to plain text",
           "instillAcceptFormats": [
-            "string"
+            "*/*"
           ],
           "instillUIMultiline": true,
           "instillUIOrder": 0,
@@ -29,9 +29,6 @@
     },
     "output": {
       "description": "Output",
-      "instillEditOnNodeFields": [
-        "text"
-      ],
       "instillUIOrder": 0,
       "properties": {
         "body": {
@@ -46,25 +43,24 @@
           "description": "Error message if any during the conversion process",
           "instillFormat": "string",
           "instillUIMultiline": true,
-          "instillUIOrder": 0,
+          "instillUIOrder": 3,
           "title": "Error",
           "type": "string"
         },
         "meta": {
           "description": "Metadata extracted from the document",
-          "instillFormat": "string",
-          "instillUIMultiline": true,
-          "instillUIOrder": 0,
+          "instillFormat": "application/json",
+          "instillUIOrder": 1,
+          "required": [],
           "title": "Meta",
-          "type": "string"
+          "type": "object"
         },
         "msecs": {
           "description": "Time taken to convert the document",
-          "instillFormat": "string",
-          "instillUIMultiline": true,
-          "instillUIOrder": 0,
+          "instillFormat": "number",
+          "instillUIOrder": 2,
           "title": "MSecs",
-          "type": "string"
+          "type": "number"
         }
       },
       "required": [
