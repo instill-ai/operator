@@ -19,11 +19,11 @@ type SplitByTokenInput struct {
 // SplitByTokenOutput defines the output for split by token task
 type SplitByTokenOutput struct {
 	// TokenCount: Number of tokens in the text
-	TokenCount int      `json:"token_count"`
+	TokenCount int `json:"token_count"`
 	// TextChunks: List of text chunks
 	TextChunks []string `json:"text_chunks"`
 	// ChunkNum: Number of text chunks
-	ChunkNum   int      `json:"chunk_num"`
+	ChunkNum int `json:"chunk_num"`
 }
 
 // splitTextIntoChunks splits text into text chunks based on token size

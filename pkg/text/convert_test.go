@@ -15,39 +15,39 @@ import (
 func TestConvertToText(t *testing.T) {
 
 	tests := []struct {
-		name string
+		name     string
 		filepath string
 	}{
 		{
-			name: "Convert pdf file",
+			name:     "Convert pdf file",
 			filepath: "./testdata/test.pdf",
 		},
 		{
-			name: "Convert docx file",
+			name:     "Convert docx file",
 			filepath: "./testdata/test.docx",
 		},
 		{
-			name: "Convert html file",
+			name:     "Convert html file",
 			filepath: "./testdata/test.html",
 		},
 		{
-			name: "Convert odt file",
+			name:     "Convert odt file",
 			filepath: "./testdata/test.odt",
 		},
 		{
-			name: "Convert rtf file",
+			name:     "Convert rtf file",
 			filepath: "./testdata/test.rtf",
 		},
 		{
-			name: "Convert png file",
+			name:     "Convert png file",
 			filepath: "./testdata/test.png",
 		},
 		{
-			name: "Convert jpg file",
+			name:     "Convert jpg file",
 			filepath: "./testdata/test.jpg",
 		},
 		{
-			name: "Convert tiff file",
+			name:     "Convert tiff file",
 			filepath: "./testdata/test.tif",
 		},
 	}
@@ -65,7 +65,7 @@ func TestConvertToText(t *testing.T) {
 
 			input := &structpb.Struct{
 				Fields: map[string]*structpb.Value{
-					"doc":  {Kind: &structpb.Value_StringValue{StringValue: base64DataURI}},
+					"doc": {Kind: &structpb.Value_StringValue{StringValue: base64DataURI}},
 				},
 			}
 			inputs := []*structpb.Struct{

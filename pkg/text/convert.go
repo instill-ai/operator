@@ -23,24 +23,24 @@ type ConvertToTextOutput struct {
 	// Body: Plain text converted from the document
 	Body string `json:"body"`
 	// Meta: Metadata extracted from the document
-	Meta  map[string]string `json:"meta"`
+	Meta map[string]string `json:"meta"`
 	// MSecs: Time taken to convert the document
-	MSecs uint32            `json:"msecs"`
+	MSecs uint32 `json:"msecs"`
 	// Error: Error message if any during the conversion process
-	Error string            `json:"error"`
+	Error string `json:"error"`
 }
 
 func getContentTypeFromBase64(base64String string) (string, error) {
-    // Remove the "data:" prefix and split at the first semicolon
-    contentType := strings.TrimPrefix(base64String, "data:")
+	// Remove the "data:" prefix and split at the first semicolon
+	contentType := strings.TrimPrefix(base64String, "data:")
 
-    parts := strings.SplitN(contentType, ";", 2)
-    if len(parts) != 2 {
-        return "", fmt.Errorf("invalid format")
-    }
+	parts := strings.SplitN(contentType, ";", 2)
+	if len(parts) != 2 {
+		return "", fmt.Errorf("invalid format")
+	}
 
-    // The first part is the content type
-    return parts[0], nil
+	// The first part is the content type
+	return parts[0], nil
 }
 
 func convertToText(input ConvertToTextInput) (ConvertToTextOutput, error) {
@@ -61,8 +61,8 @@ func convertToText(input ConvertToTextInput) (ConvertToTextOutput, error) {
 	}
 
 	return ConvertToTextOutput{
-		Body: res.Body,
-		Meta: res.Meta,
+		Body:  res.Body,
+		Meta:  res.Meta,
 		MSecs: res.MSecs,
 		Error: res.Error,
 	}, nil
