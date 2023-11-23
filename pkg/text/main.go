@@ -14,7 +14,8 @@ import (
 )
 
 const (
-	taskTokenizerSplitter string = "TASK_TOKENIZER_SPLITTER"
+	taskConvertToText string = "TASK_CONVERT_TO_TEXT"
+	taskSplitByToken string = "TASK_SPLIT_BY_TOKEN"
 )
 
 var (
@@ -65,14 +66,27 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 
 	for _, input := range inputs {
 		switch e.Task {
-		case taskTokenizerSplitter:
-
-			inputStruct := TokenizerSplitterInput{}
+		case taskConvertToText:
+			inputStruct := ConvertToTextInput{}
 			err := base.ConvertFromStructpb(input, &inputStruct)
 			if err != nil {
 				return nil, err
 			}
-
+			outputStruct, err := convertToText(inputStruct)
+			if err != nil {
+				return nil, err
+			}
+			output, err := base.ConvertToStructpb(outputStruct)
+			if err != nil {
+				return nil, err
+			}
+			outputs = append(outputs, output)
+		case taskSplitByToken:
+			inputStruct := SplitByTokenInput{}
+			err := base.ConvertFromStructpb(input, &inputStruct)
+			if err != nil {
+				return nil, err
+			}
 			outputStruct, err := splitTextIntoChunks(inputStruct)
 			if err != nil {
 				return nil, err
@@ -82,7 +96,6 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 				return nil, err
 			}
 			outputs = append(outputs, output)
-
 		default:
 			return nil, fmt.Errorf("not supported task: %s", e.Task)
 		}

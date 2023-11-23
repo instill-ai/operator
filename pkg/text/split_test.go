@@ -6,8 +6,8 @@ import (
 	"google.golang.org/protobuf/types/known/structpb"
 )
 
-// TestTokenizerSplitter tests the tokenizer splitter task
-func TestTokenizerSplitter(t *testing.T) {
+// TestSplitByToken tests the split by token task
+func TestSplitByToken(t *testing.T) {
 	input := &structpb.Struct{
 		Fields: map[string]*structpb.Value{
 			"text":  {Kind: &structpb.Value_StringValue{StringValue: "Hello world. This is a test."}},
@@ -19,9 +19,9 @@ func TestTokenizerSplitter(t *testing.T) {
 	}
 
 	e := &Execution{}
-	e.Task = "TASK_TOKENIZER_SPLITTER"
+	e.Task = "TASK_SPLIT_BY_TOKEN"
 
 	if _, err := e.Execute(inputs); err != nil {
-		t.Fatalf("tokenizerSplitter returned an error: %v", err)
+		t.Fatalf("splitByToken returned an error: %v", err)
 	}
 }

@@ -1,5 +1,83 @@
 {
-  "TASK_TOKENIZER_SPLITTER": {
+  "TASK_CONVERT_TO_TEXT": {
+    "input": {
+      "description": "Input",
+      "instillEditOnNodeFields": [
+        "doc"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "doc": {
+          "description": "Base64 encoded document (PDF, DOC, DOCX, XML, HTML, RTF, etc.) to be converted to plain text",
+          "instillAcceptFormats": [
+            "string"
+          ],
+          "instillUIMultiline": true,
+          "instillUIOrder": 0,
+          "instillUpstreamTypes": [
+            "reference"
+          ],
+          "title": "Document",
+          "type": "string"
+        }
+      },
+      "required": [
+        "doc"
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Output",
+      "instillEditOnNodeFields": [
+        "text"
+      ],
+      "instillUIOrder": 0,
+      "properties": {
+        "body": {
+          "description": "Plain text converted from the document",
+          "instillFormat": "string",
+          "instillUIMultiline": true,
+          "instillUIOrder": 0,
+          "title": "Body",
+          "type": "string"
+        },
+        "error": {
+          "description": "Error message if any during the conversion process",
+          "instillFormat": "string",
+          "instillUIMultiline": true,
+          "instillUIOrder": 0,
+          "title": "Error",
+          "type": "string"
+        },
+        "meta": {
+          "description": "Metadata extracted from the document",
+          "instillFormat": "string",
+          "instillUIMultiline": true,
+          "instillUIOrder": 0,
+          "title": "Meta",
+          "type": "string"
+        },
+        "msecs": {
+          "description": "Time taken to convert the document",
+          "instillFormat": "string",
+          "instillUIMultiline": true,
+          "instillUIOrder": 0,
+          "title": "MSecs",
+          "type": "string"
+        }
+      },
+      "required": [
+        "body",
+        "meta",
+        "msecs",
+        "error"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_SPLIT_BY_TOKEN": {
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
