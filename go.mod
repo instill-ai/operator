@@ -6,7 +6,7 @@ require (
 	code.sajari.com/docconv v1.3.8
 	github.com/fogleman/gg v1.3.0
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.7.0-alpha
+	github.com/instill-ai/component v0.7.0-alpha.0.20231123142642-cdd8e3280413
 	github.com/pkoukk/tiktoken-go v0.1.6
 	github.com/stretchr/testify v1.8.2
 	go.uber.org/zap v1.26.0
@@ -31,7 +31,7 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.2 // indirect
-	github.com/instill-ai/protogen-go v0.3.3-alpha.0.20231025123919-4d2839df0d09 // indirect
+	github.com/instill-ai/protogen-go v0.3.3-alpha.0.20231121163720-206d6eff20a7 // indirect
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056 // indirect
 	github.com/lestrrat-go/jspointer v0.0.0-20181205001929-82fadba7561c // indirect
 	github.com/lestrrat-go/jsref v0.0.0-20211028120858-c0bcbb5abf20 // indirect
