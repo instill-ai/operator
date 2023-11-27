@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0-alpha](https://github.com/instill-ai/operator/compare/v0.4.0-alpha...v0.5.0-alpha) (2023-11-27)
+
+
+### Features
+
+* **text:** add operator ([#39](https://github.com/instill-ai/operator/issues/39)) ([25f0a96](https://github.com/instill-ai/operator/commit/25f0a96067829d447dbfc2c9cb30af42cf6fd747))
+
 ## [0.4.0-alpha](https://github.com/instill-ai/operator/compare/v0.3.0-alpha...v0.4.0-alpha) (2023-11-11)
 
 
