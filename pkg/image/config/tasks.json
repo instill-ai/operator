@@ -5,7 +5,7 @@
       "instillUIOrder": 0,
       "properties": {
         "category": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/classification/properties/category",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/classification/properties/category",
           "instillAcceptFormats": [
             "string"
           ],
@@ -28,7 +28,7 @@
           "type": "string"
         },
         "score": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/classification/properties/score",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/classification/properties/score",
           "instillAcceptFormats": [
             "number",
             "integer"
@@ -100,9 +100,9 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/detection/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/detection/properties/objects",
           "instillAcceptFormats": [
-            "structured/detection_objects"
+            "array:structured/detection_object"
           ],
           "instillUpstreamTypes": [
             "reference"
@@ -169,9 +169,9 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/instance_segmentation/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/instance_segmentation/properties/objects",
           "instillAcceptFormats": [
-            "structured/instance_segmentation_objects"
+            "array:structured/instance_segmentation_object"
           ],
           "instillUpstreamTypes": [
             "reference"
@@ -238,9 +238,9 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/keypoint/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/keypoint/properties/objects",
           "instillAcceptFormats": [
-            "structured/keypoint_objects"
+            "array:structured/keypoint_object"
           ],
           "instillUpstreamTypes": [
             "reference"
@@ -307,9 +307,9 @@
           "type": "string"
         },
         "objects": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/ocr/properties/objects",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/ocr/properties/objects",
           "instillAcceptFormats": [
-            "structured/ocr_objects"
+            "array:structured/ocr_object"
           ],
           "instillUpstreamTypes": [
             "reference"
@@ -389,9 +389,9 @@
           "type": "boolean"
         },
         "stuffs": {
-          "$ref": "https://raw.githubusercontent.com/instill-ai/component/6032b6ce48ed84f907578f4a3d3aa1223680f10d/schema.json#/$defs/instill_types/semantic_segmentation/properties/stuffs",
+          "$ref": "https://raw.githubusercontent.com/instill-ai/component/cdccadb78d0cd4551a43379924824c2b1b2bdfb9/schema.json#/$defs/instill_types/semantic_segmentation/properties/stuffs",
           "instillAcceptFormats": [
-            "structured/semantic_segmentation_stuffs"
+            "array:structured/semantic_segmentation_stuff"
           ],
           "instillUpstreamTypes": [
             "reference"
