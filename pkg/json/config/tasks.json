@@ -10,7 +10,9 @@
         "object": {
           "description": "Json object to be marshaled",
           "instillAcceptFormats": [
-            "object"
+            "object",
+            "semi-structured/*",
+            "structured/*"
           ],
           "instillEditOnNodeFields": [],
           "instillUIOrder": 0,
@@ -90,7 +92,7 @@
         "object": {
           "description": "Object",
           "instillEditOnNodeFields": [],
-          "instillFormat": "application/json",
+          "instillFormat": "semi-structured/object",
           "instillUIOrder": 0,
           "required": [],
           "title": "Object",

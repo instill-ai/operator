@@ -49,7 +49,7 @@
         },
         "meta": {
           "description": "Metadata extracted from the document",
-          "instillFormat": "application/json",
+          "instillFormat": "semi-structured/object",
           "instillUIOrder": 1,
           "required": [],
           "title": "Meta",
