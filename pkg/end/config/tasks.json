@@ -36,24 +36,7 @@
               "type": "string"
             },
             "type": {
-              "description": "Data Type",
-              "enum": [
-                "integer",
-                "integer_array",
-                "number",
-                "number_array",
-                "boolean",
-                "boolean_array",
-                "text",
-                "text_array",
-                "image",
-                "image_array",
-                "audio",
-                "audio_array",
-                "video",
-                "video_array"
-              ],
-              "title": "Type"
+              "type": "string"
             }
           },
           "type": "object"
