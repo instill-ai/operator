@@ -11,8 +11,7 @@
           ],
           "instillUpstreamTypes": [
             "value",
-            "reference",
-            "template"
+            "reference"
           ]
         },
         "image": {

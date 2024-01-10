@@ -138,8 +138,7 @@
           "instillUIOrder": 1,
           "instillUpstreamTypes": [
             "value",
-            "reference",
-            "template"
+            "reference"
           ],
           "title": "Model",
           "type": "string"
@@ -153,8 +152,7 @@
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
-            "reference",
-            "template"
+            "reference"
           ],
           "title": "Text",
           "type": "string"
