@@ -43,7 +43,7 @@ func Init(logger *zap.Logger) base.IOperator {
 	return operator
 }
 
-func (o *Operator) CreateExecution(defUid uuid.UUID, task string, config *structpb.Struct, logger *zap.Logger) (base.IExecution, error) {
+func (o *Operator) CreateExecution(defUID uuid.UUID, task string, config *structpb.Struct, logger *zap.Logger) (base.IExecution, error) {
 	panic("this is a special pipeline operator, we should not implement this function")
 }
 

@@ -82,12 +82,12 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 		default:
 			return nil, fmt.Errorf("not supported task: %s", e.Task)
 		}
-		outputJson, err := json.Marshal(base64Struct)
+		outputJSON, err := json.Marshal(base64Struct)
 		if err != nil {
 			return nil, err
 		}
 		output := structpb.Struct{}
-		err = protojson.Unmarshal(outputJson, &output)
+		err = protojson.Unmarshal(outputJSON, &output)
 		if err != nil {
 			return nil, err
 		}
