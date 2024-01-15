@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.1-beta](https://github.com/instill-ai/operator/compare/v0.6.0-beta...v0.6.1-beta) (2024-01-15)
+
+
+### Bug Fixes
+
+* **start:** use `instillFormat` instead of `instillAcceptFormat` ([#50](https://github.com/instill-ai/operator/issues/50)) ([1b85b55](https://github.com/instill-ai/operator/commit/1b85b551fed55d71a86ae9f5e8445d7ed8b15a62))
+
+
+### Miscellaneous Chores
+
+* release v0.6.1-beta ([dca6917](https://github.com/instill-ai/operator/commit/dca69171d1330dd20a0165bb63cf9fb7cc482c7d))
+
 ## [0.6.0-beta](https://github.com/instill-ai/operator/compare/v0.5.0-alpha...v0.6.0-beta) (2023-12-15)
 
 
