@@ -1,5 +1,6 @@
 {
   "TASK_DECODE": {
+    "instillShortDescription": "Decode the base64 string.",
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
@@ -52,6 +53,7 @@
     }
   },
   "TASK_ENCODE": {
+    "instillShortDescription": "Encode data into base64 string",
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
