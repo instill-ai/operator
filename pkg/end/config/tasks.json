@@ -36,9 +36,11 @@
               "type": "string"
             }
           },
+          "title": "Metadata Item",
           "type": "object"
         }
       },
+      "title": "Metadata",
       "type": "object"
     },
     "output": {
