@@ -6,7 +6,7 @@ require (
 	code.sajari.com/docconv v1.3.8
 	github.com/fogleman/gg v1.3.0
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.9.0-beta.0.20240127101208-0878f99479f2
+	github.com/instill-ai/component v0.9.0-beta.0.20240128150416-88cf79188084
 	github.com/pkoukk/tiktoken-go v0.1.6
 	github.com/stretchr/testify v1.8.2
 	go.uber.org/zap v1.26.0
