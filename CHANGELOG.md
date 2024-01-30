@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0-beta](https://github.com/instill-ai/operator/compare/v0.6.1-beta...v0.7.0-beta) (2024-01-30)
+
+
+### Features
+
+* add task title and description ([#55](https://github.com/instill-ai/operator/issues/55)) ([298de79](https://github.com/instill-ai/operator/commit/298de79c7057420fab94a08002657ed66cd74853))
+
 ## [0.6.1-beta](https://github.com/instill-ai/operator/compare/v0.6.0-beta...v0.6.1-beta) (2024-01-15)
 
 
