@@ -8,12 +8,12 @@ import (
 	"google.golang.org/protobuf/types/known/structpb"
 
 	"github.com/instill-ai/component/pkg/base"
-	"github.com/instill-ai/operator/pkg/base64"
-	"github.com/instill-ai/operator/pkg/end"
-	"github.com/instill-ai/operator/pkg/image"
-	"github.com/instill-ai/operator/pkg/json"
-	"github.com/instill-ai/operator/pkg/start"
-	"github.com/instill-ai/operator/pkg/text"
+	"github.com/instill-ai/operator/pkg/base64/v1"
+	"github.com/instill-ai/operator/pkg/end/v1"
+	"github.com/instill-ai/operator/pkg/image/v1"
+	"github.com/instill-ai/operator/pkg/json/v1"
+	"github.com/instill-ai/operator/pkg/start/v1"
+	"github.com/instill-ai/operator/pkg/text/v1"
 )
 
 var (

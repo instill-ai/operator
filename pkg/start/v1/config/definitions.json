@@ -12,6 +12,8 @@
     "spec": {},
     "title": "Start",
     "tombstone": false,
-    "uid": "2ac8be70-0f7a-4b61-a33d-098b8acfa6f3"
+    "uid": "2ac8be70-0f7a-4b61-a33d-098b8acfa6f3",
+    "version": "1.0.0-alpha",
+    "source_url": "github.com/instill-ai/operator/blob/main/pkg/start/v1"
   }
 ]
