@@ -13,7 +13,7 @@
     "title": "End",
     "tombstone": false,
     "uid": "4f39c8bc-8617-495d-80de-80d0f5397516",
-    "version": "1.0.0-alpha",
-    "source_url": "github.com/instill-ai/operator/blob/main/pkg/end/v1"
+    "version": "0.1.0-alpha",
+    "source_url": "github.com/instill-ai/operator/blob/main/pkg/end/v0"
   }
 ]

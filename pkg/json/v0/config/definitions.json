@@ -13,7 +13,7 @@
     "spec": {},
     "title": "JSON",
     "uid": "28f53d15-6150-46e6-99aa-f76b70a926c0",
-    "version": "1.0.0-alpha",
-    "source_url": "github.com/instill-ai/operator/blob/main/pkg/json/v1"
+    "version": "0.1.0-alpha",
+    "source_url": "github.com/instill-ai/operator/blob/main/pkg/json/v0"
   }
 ]
