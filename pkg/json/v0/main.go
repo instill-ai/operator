@@ -2,10 +2,12 @@ package json
 
 import (
 	_ "embed"
+	"encoding/json"
 	"fmt"
 	"sync"
 
 	"github.com/gofrs/uuid"
+	"github.com/itchyny/gojq"
 	"go.uber.org/zap"
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/types/known/structpb"
@@ -17,6 +19,7 @@ import (
 const (
 	taskMarshal   = "TASK_MARSHAL"
 	taskUnmarshal = "TASK_UNMARSHAL"
+	taskJQ        = "TASK_JQ"
 )
 
 var (
@@ -62,6 +65,8 @@ func (o *operator) CreateExecution(defUID uuid.UUID, task string, config *struct
 		e.execute = e.marshal
 	case taskUnmarshal:
 		e.execute = e.unmarshal
+	case taskJQ:
+		e.execute = e.jq
 	default:
 		return nil, errmsg.AddMessage(
 			fmt.Errorf("not supported task: %s", task),
@@ -104,6 +109,52 @@ func (e *execution) unmarshal(in *structpb.Struct) (*structpb.Struct, error) {
 
 	return out, nil
 }
+
+func (e *execution) jq(in *structpb.Struct) (*structpb.Struct, error) {
+	out := new(structpb.Struct)
+
+	b := []byte(in.Fields["jsonInput"].GetStringValue())
+	var input any
+	if err := json.Unmarshal(b, &input); err != nil {
+		return nil, errmsg.AddMessage(err, "Couldn't parse the JSON input. Please check the syntax is correct.")
+	}
+
+	queryStr := in.Fields["jqFilter"].GetStringValue()
+	q, err := gojq.Parse(queryStr)
+	if err != nil {
+		// Error messages from gojq are human-friendly enough.
+		msg := fmt.Sprintf("Couldn't parse the jq filter: %s. Please check the syntax is correct.", err.Error())
+		return nil, errmsg.AddMessage(err, msg)
+	}
+
+	results := []any{}
+	iter := q.Run(input)
+	for {
+		v, ok := iter.Next()
+		if !ok {
+			break
+		}
+
+		if err, ok := v.(error); ok {
+			msg := fmt.Sprintf("Couldn't apply the jq filter: %s.", err.Error())
+			return nil, errmsg.AddMessage(err, msg)
+		}
+
+		results = append(results, v)
+	}
+
+	list, err := structpb.NewList(results)
+	if err != nil {
+		return nil, err
+	}
+
+	out.Fields = map[string]*structpb.Value{
+		"results": structpb.NewListValue(list),
+	}
+
+	return out, nil
+}
+
 func (e *execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, error) {
 	outputs := make([]*structpb.Struct, len(inputs))
 
