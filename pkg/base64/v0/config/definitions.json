@@ -13,6 +13,8 @@
     "spec": {},
     "title": "Base64",
     "tombstone": false,
-    "uid": "3a836447-c211-4134-9cc5-ad45e1cc467e"
+    "uid": "3a836447-c211-4134-9cc5-ad45e1cc467e",
+    "version": "0.1.0-alpha",
+    "source_url": "github.com/instill-ai/operator/blob/main/pkg/base64/v0"
   }
 ]

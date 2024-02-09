@@ -12,6 +12,8 @@
     "public": true,
     "spec": {},
     "title": "Text",
-    "uid": "5b7aca5b-1ae3-477f-bf60-d34e1c993c87"
+    "uid": "5b7aca5b-1ae3-477f-bf60-d34e1c993c87",
+    "version": "0.1.0-alpha",
+    "source_url": "github.com/instill-ai/operator/blob/main/pkg/text/v0"
   }
 ]
