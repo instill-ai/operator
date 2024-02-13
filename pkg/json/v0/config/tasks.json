@@ -1,15 +1,15 @@
 {
   "TASK_MARSHAL": {
-    "instillShortDescription": "Marshal the JSON object into string.",
+    "instillShortDescription": "Convert JSON to a string.",
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
-        "object"
+        "json"
       ],
       "instillUIOrder": 0,
       "properties": {
-        "object": {
-          "description": "Json object to be marshaled",
+        "json": {
+          "description": "JSON to be marshaled",
           "instillAcceptFormats": [
             "object",
             "semi-structured/*",
@@ -21,12 +21,11 @@
             "reference"
           ],
           "required": [],
-          "title": "Object",
-          "type": "object"
+          "title": "JSON"
         }
       },
       "required": [
-        "object"
+        "json"
       ],
       "title": "Input",
       "type": "object"
@@ -55,7 +54,7 @@
     }
   },
   "TASK_UNMARSHAL": {
-    "instillShortDescription": "Unmarshal the JSON object from string.",
+    "instillShortDescription": "Convert a string to JSON.",
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
@@ -87,22 +86,21 @@
     "output": {
       "description": "Output",
       "instillEditOnNodeFields": [
-        "object"
+        "json"
       ],
       "instillUIOrder": 0,
       "properties": {
-        "object": {
+        "json": {
           "description": "Object",
           "instillEditOnNodeFields": [],
-          "instillFormat": "semi-structured/object",
+          "instillFormat": "semi-structured/json",
           "instillUIOrder": 0,
           "required": [],
-          "title": "Object",
-          "type": "object"
+          "title": "JSON"
         }
       },
       "required": [
-        "object"
+        "json"
       ],
       "title": "Output",
       "type": "object"
