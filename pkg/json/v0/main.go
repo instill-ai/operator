@@ -63,7 +63,7 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 		output := structpb.Struct{Fields: make(map[string]*structpb.Value)}
 		switch e.Task {
 		case marshal:
-			b, err := protojson.Marshal(input.Fields["object"])
+			b, err := protojson.Marshal(input.Fields["json"])
 			if err != nil {
 				return nil, err
 			}
@@ -74,7 +74,7 @@ func (e *Execution) Execute(inputs []*structpb.Struct) ([]*structpb.Struct, erro
 			if err != nil {
 				return nil, err
 			}
-			output.Fields["object"] = structpb.NewStructValue(&obj)
+			output.Fields["json"] = structpb.NewStructValue(&obj)
 
 		default:
 			return nil, fmt.Errorf("not supported task: %s", e.Task)
