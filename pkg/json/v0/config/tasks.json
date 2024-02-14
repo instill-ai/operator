@@ -63,7 +63,7 @@
       "instillUIOrder": 0,
       "properties": {
         "string": {
-          "description": "Json string to be unmarshaled",
+          "description": "JSON string to be unmarshaled",
           "instillAcceptFormats": [
             "string"
           ],
@@ -71,7 +71,8 @@
           "instillUIOrder": 0,
           "instillUpstreamTypes": [
             "value",
-            "reference"
+            "reference",
+            "template"
           ],
           "title": "String",
           "type": "string"
@@ -101,6 +102,74 @@
       },
       "required": [
         "json"
+      ],
+      "title": "Output",
+      "type": "object"
+    }
+  },
+  "TASK_JQ": {
+    "instillShortDescription": "Process JSON through a jq command",
+    "input": {
+      "description": "Source JSON and jq command",
+      "instillUIOrder": 0,
+      "properties": {
+        "jsonInput": {
+          "instillUIOrder": 0,
+          "description": "JSON string to be processed",
+          "instillAcceptFormats": [
+            "string"
+          ],
+          "instillUpstreamTypes": [
+            "value",
+            "reference",
+            "template"
+          ],
+          "instillUIMultiline": true,
+          "title": "JSON input",
+          "type": "string"
+        },
+        "jqFilter": {
+          "instillUIOrder": 1,
+          "description": "Filter, in jq syntax, that will be applied to the JSON input",
+          "instillAcceptFormats": [
+            "string"
+          ],
+          "instillUpstreamTypes": [
+            "value",
+            "reference",
+            "template"
+          ],
+          "instillUIMultiline": true,
+          "title": "JQ filter",
+          "type": "string"
+        }
+      },
+      "required": [
+        "jsonInput",
+        "jqFilter"
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "description": "Results of the jq command applied to the input JSON",
+      "instillUIOrder": 0,
+      "properties": {
+        "results": {
+          "description": "The jq command results. Depending on the filter and the input JSON the type of each element may vary.",
+          "instillEditOnNodeFields": [],
+          "instillUIOrder": 0,
+          "required": [],
+          "title": "Results",
+          "type": "array",
+          "instillFormat": "semi-structured/json",
+          "items": {
+            "instillFormat": "semi-structured/json"
+          }
+        }
+      },
+      "required": [
+        "results"
       ],
       "title": "Output",
       "type": "object"
