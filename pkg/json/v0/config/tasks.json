@@ -167,9 +167,7 @@
           "type": "array",
           "instillFormat": "semi-structured/json",
           "items": {
-            "instillAcceptFormats": [
-              "semi-structured/json"
-            ]
+            "instillFormat": "semi-structured/json"
           }
         }
       },
