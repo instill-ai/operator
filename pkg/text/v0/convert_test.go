@@ -20,35 +20,35 @@ func TestConvertToText(t *testing.T) {
 	}{
 		{
 			name:     "Convert pdf file",
-			filepath: "./testdata/test.pdf",
+			filepath: "testdata/test.pdf",
 		},
 		{
 			name:     "Convert docx file",
-			filepath: "./testdata/test.docx",
+			filepath: "testdata/test.docx",
 		},
 		{
 			name:     "Convert html file",
-			filepath: "./testdata/test.html",
+			filepath: "testdata/test.html",
 		},
 		{
 			name:     "Convert odt file",
-			filepath: "./testdata/test.odt",
+			filepath: "testdata/test.odt",
 		},
 		{
 			name:     "Convert rtf file",
-			filepath: "./testdata/test.rtf",
+			filepath: "testdata/test.rtf",
 		},
 		{
 			name:     "Convert png file",
-			filepath: "./testdata/test.png",
+			filepath: "testdata/test.png",
 		},
 		{
 			name:     "Convert jpg file",
-			filepath: "./testdata/test.jpg",
+			filepath: "testdata/test.jpg",
 		},
 		{
 			name:     "Convert tiff file",
-			filepath: "./testdata/test.tif",
+			filepath: "testdata/test.tif",
 		},
 	}
 
