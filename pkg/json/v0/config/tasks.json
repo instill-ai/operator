@@ -153,9 +153,6 @@
     },
     "output": {
       "description": "Results of the jq command applied to the input JSON",
-      "instillEditOnNodeFields": [
-        "json"
-      ],
       "instillUIOrder": 0,
       "properties": {
         "results": {
