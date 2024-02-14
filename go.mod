@@ -7,7 +7,7 @@ require (
 	github.com/fogleman/gg v1.3.0
 	github.com/frankban/quicktest v1.14.6
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.10.0-beta.0.20240212093359-3dbaa03ff708
+	github.com/instill-ai/component v0.10.0-beta.0.20240214094419-66fea88f30d8
 	github.com/instill-ai/x v0.4.0-alpha
 	github.com/itchyny/gojq v0.12.14
 	github.com/pkoukk/tiktoken-go v0.1.6
