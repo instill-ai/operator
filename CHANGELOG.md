@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.0-beta](https://github.com/instill-ai/operator/compare/v0.7.0-beta...v0.8.0-beta) (2024-02-16)
+
+
+### Features
+
+* implement jq task in JSON operator ([#61](https://github.com/instill-ai/operator/issues/61)) ([f38cd90](https://github.com/instill-ai/operator/commit/f38cd90ce30c4a26baa6b7c415884a8a0fde0ee5))
+* **json:** use `semi-structured/json` in TASK_MARSHAL and TASK_UNMARSHAL ([#62](https://github.com/instill-ai/operator/issues/62)) ([acbe2db](https://github.com/instill-ai/operator/commit/acbe2dbf7868c43e3e75e114a1048419b4e238ff))
+* set component versions to 0.1.0-alpha ([#59](https://github.com/instill-ai/operator/issues/59)) ([80df32e](https://github.com/instill-ai/operator/commit/80df32e4d0e4e7f61bcc8afca2c923c4cf3b71f5))
+* store icons next to the component definition ([#58](https://github.com/instill-ai/operator/issues/58)) ([9fea343](https://github.com/instill-ai/operator/commit/9fea3434d0d1352bba6da3c703b12377c057f9e1))
+
 ## [0.7.0-beta](https://github.com/instill-ai/operator/compare/v0.6.1-beta...v0.7.0-beta) (2024-01-30)
 
 
