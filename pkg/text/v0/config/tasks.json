@@ -185,6 +185,7 @@
         "text_chunks": {
           "description": "Text chunks after splitting",
           "instillUIOrder": 1,
+          "instillFormat": "array:string",
           "items": {
             "instillFormat": "string",
             "instillUIMultiline": true,
