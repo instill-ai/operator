@@ -162,7 +162,7 @@
           "required": [],
           "title": "Results",
           "type": "array",
-          "instillFormat": "semi-structured/json",
+          "instillFormat": "array:semi-structured/json",
           "items": {
             "instillFormat": "semi-structured/json"
           }
