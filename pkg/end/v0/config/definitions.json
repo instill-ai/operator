@@ -14,6 +14,7 @@
     "tombstone": false,
     "uid": "4f39c8bc-8617-495d-80de-80d0f5397516",
     "version": "0.1.0-alpha",
-    "source_url": "https://github.com/instill-ai/operator/blob/main/pkg/end/v0"
+    "source_url": "https://github.com/instill-ai/operator/blob/main/pkg/end/v0",
+    "description": "Serves as the output interface of a pipeline when triggered synchronously"
   }
 ]
