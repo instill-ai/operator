@@ -5,7 +5,7 @@ draft: false
 description: "Learn about how to set up a VDP Base64 operator https://github.com/instill-ai/vdp"
 ---
 
-The Base64 component is an operator that tODO.
+The Base64 component is an operator that enables users to encode or decode a string in Base64 format.
 It can carry out the following tasks:
 
 - [Encode](#encode)
@@ -23,13 +23,26 @@ The component configuration is defined and maintained [here](https://github.com/
 
 ### Encode
 
-| Input | Type | Description |
-| :--- | --- | --- |
-| task | string | `TASK_ENCODE` |
+Encode data into base64 string
+
+| Input | ID | Type | Description |
+| :--- | :--- | :--- | :--- |
+| Task ID (required) | `task` | string | `TASK_ENCODE` |
+| Data (required) | `data` | string | Data to be encoded |
+
+| Output | ID | Type | Description |
+| :--- | :--- | :--- | :--- |
+| Data | `data` | string | Data |
 
 ### Decode
 
-| Input | Type | Description |
-| :--- | --- | --- |
-| task | string | `TASK_DECODE` |
+Decode the base64 string.
 
+| Input | ID | Type | Description |
+| :--- | :--- | :--- | :--- |
+| Task ID (required) | `task` | string | `TASK_DECODE` |
+| Data (required) | `data` | string | Base64 string to be decoded |
+
+| Output | ID | Type | Description |
+| :--- | :--- | :--- | :--- |
+| Data | `data` | string | Data |
