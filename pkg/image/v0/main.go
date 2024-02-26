@@ -1,3 +1,4 @@
+// TODO go:generate compogen readme --operator ./config ./README.mdx
 package image
 
 import (

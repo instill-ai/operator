@@ -1,6 +1,6 @@
 {
   "TASK_MARSHAL": {
-    "instillShortDescription": "Convert JSON to a string.",
+    "instillShortDescription": "Convert JSON to a string",
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
@@ -9,7 +9,7 @@
       "instillUIOrder": 0,
       "properties": {
         "json": {
-          "description": "JSON to be marshaled",
+          "description": "JSON input to be marshaled",
           "instillAcceptFormats": [
             "object",
             "semi-structured/*",
@@ -38,11 +38,11 @@
       "instillUIOrder": 0,
       "properties": {
         "string": {
-          "description": "Data",
+          "description": "String representation of the JSON input",
           "instillFormat": "string",
           "instillUIMultiline": true,
           "instillUIOrder": 0,
-          "title": "Data",
+          "title": "JSON string",
           "type": "string"
         }
       },
@@ -54,7 +54,7 @@
     }
   },
   "TASK_UNMARSHAL": {
-    "instillShortDescription": "Convert a string to JSON.",
+    "instillShortDescription": "Convert a string to JSON",
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
@@ -92,7 +92,7 @@
       "instillUIOrder": 0,
       "properties": {
         "json": {
-          "description": "Object",
+          "description": "JSON object extracted from the string input",
           "instillEditOnNodeFields": [],
           "instillFormat": "semi-structured/json",
           "instillUIOrder": 0,
@@ -108,7 +108,8 @@
     }
   },
   "TASK_JQ": {
-    "instillShortDescription": "Process JSON through a jq command",
+    "instillShortDescription": "Process JSON through a `jq` command",
+    "title": "jq",
     "input": {
       "description": "Source JSON and jq command",
       "instillUIOrder": 0,
@@ -130,7 +131,7 @@
         },
         "jqFilter": {
           "instillUIOrder": 1,
-          "description": "Filter, in jq syntax, that will be applied to the JSON input",
+          "description": "Filter, in `jq` syntax, that will be applied to the JSON input",
           "instillAcceptFormats": [
             "string"
           ],
@@ -140,7 +141,7 @@
             "template"
           ],
           "instillUIMultiline": true,
-          "title": "JQ filter",
+          "title": "Filter",
           "type": "string"
         }
       },
@@ -152,11 +153,11 @@
       "type": "object"
     },
     "output": {
-      "description": "Results of the jq command applied to the input JSON",
+      "description": "Results of the `jq` command applied to the input JSON",
       "instillUIOrder": 0,
       "properties": {
         "results": {
-          "description": "The jq command results. Depending on the filter and the input JSON the type of each element may vary.",
+          "description": "The `jq` command results. Depending on the filter and the input JSON the type of each element may vary.",
           "instillEditOnNodeFields": [],
           "instillUIOrder": 0,
           "required": [],
