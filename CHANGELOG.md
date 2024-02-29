@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.9.0-beta](https://github.com/instill-ai/operator/compare/v0.8.0-beta...v0.9.0-beta) (2024-02-29)
+
+
+### Features
+
+* auto-generate operator README.mdx ([#65](https://github.com/instill-ai/operator/issues/65)) ([0647a26](https://github.com/instill-ai/operator/commit/0647a26ef93ba192f12a92c922174bdee44e7b03))
+
+
+### Bug Fixes
+
+* add missing `array:` instillFormat in operator output ([#63](https://github.com/instill-ai/operator/issues/63)) ([ca146c3](https://github.com/instill-ai/operator/commit/ca146c33580fdfd0a610350715f944a623921c77))
+
 ## [0.8.0-beta](https://github.com/instill-ai/operator/compare/v0.7.0-beta...v0.8.0-beta) (2024-02-16)
 
 
