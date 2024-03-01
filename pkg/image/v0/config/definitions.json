@@ -19,6 +19,6 @@
     "uid": "e9eb8fc8-f249-4e11-ad50-5035d79ffc18",
     "version": "0.1.0-alpha",
     "source_url": "https://github.com/instill-ai/operator/blob/main/pkg/image/v0",
-    "description": "Manipulates image files"
+    "description": "Manipulate image files"
   }
 ]
