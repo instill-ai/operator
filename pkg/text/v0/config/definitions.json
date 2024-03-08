@@ -15,6 +15,7 @@
     "uid": "5b7aca5b-1ae3-477f-bf60-d34e1c993c87",
     "version": "0.1.0-alpha",
     "source_url": "https://github.com/instill-ai/operator/blob/main/pkg/text/v0",
-    "description": "Extract and manipulate text from different sources"
+    "description": "Extract and manipulate text from different sources",
+    "release_stage": "RELEASE_STAGE_ALPHA"
   }
 ]
