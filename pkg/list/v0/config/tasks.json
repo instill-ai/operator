@@ -1,0 +1,73 @@
+{
+  "TASK_FILTER": {
+    "instillShortDescription": "Select the elements of the list that satisfy a given condition",
+    "title": "Filter",
+    "input": {
+      "instillUIOrder": 0,
+      "properties": {
+        "filter": {
+          "title": "Filter",
+          "description": "A condition to be applied to each element in the list",
+          "type": "string",
+          "instillAcceptFormats": [
+            "string"
+          ],
+          "instillUIMultiline": false,
+          "instillUIOrder": 0,
+          "instillUpstreamTypes": [
+            "value",
+            "reference",
+            "template"
+          ]
+        },
+        "list": {
+          "type": "array",
+          "title": "List",
+          "description": "The input list to be filtered. TODO check accept formats for arbitrary element type",
+          "instillAcceptFormats": [
+            "array:string"
+          ],
+          "instillUIOrder": 1,
+          "instillUpstreamTypes": [
+            "value",
+            "reference"
+          ],
+          "items": {
+            "instillUIMultiline": false,
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "filter",
+        "list"
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "output": {
+      "title": "Output",
+      "description": "Output",
+      "instillUIOrder": 0,
+      "properties": {
+        "filtered_list": {
+          "description": "A list containing only the elements that fulfilled the condition",
+          "instillEditOnNodeFields": [],
+          "instillUIOrder": 0,
+          "required": [],
+          "title": "Results",
+          "type": "array",
+          "instillFormat": "array:semi-structured/json",
+          "items": {
+            "instillFormat": "semi-structured/json"
+          }
+        }
+      },
+      "required": [
+        "filtered_list"
+      ],
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "available_tasks": [
+      "TASK_FILTER"
+    ],
+    "custom": false,
+    "documentation_url": "",
+    "icon": "assets/list.svg",
+    "id": "list",
+    "public": true,
+    "spec": {},
+    "title": "List",
+    "description": "Manipulate lists, filtering or summarizing their elements",
+    "uid": "5a98a721-a0df-4871-93f5-db31fd5628a6",
+    "version": "0.0.1",
+    "source_url": "https://github.com/instill-ai/operator/blob/main/pkg/list/v0",
+    "release_stage": "RELEASE_STAGE_COMING_SOON"
+  }
+]
