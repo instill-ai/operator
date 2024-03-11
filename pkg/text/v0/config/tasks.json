@@ -179,6 +179,7 @@
         "chunk_num": {
           "description": "Total number of output text chunks",
           "instillUIOrder": 2,
+          "instillFormat": "integer",
           "title": "Number of Text Chunks",
           "type": "integer"
         },
@@ -197,6 +198,7 @@
         "token_count": {
           "description": "Total count of tokens in the input text",
           "instillUIOrder": 0,
+          "instillFormat": "integer",
           "title": "Token Count",
           "type": "integer"
         }
