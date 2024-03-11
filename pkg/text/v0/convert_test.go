@@ -50,6 +50,10 @@ func TestConvertToText(t *testing.T) {
 			name:     "Convert tiff file",
 			filepath: "testdata/test.tif",
 		},
+		{
+			name:     "Convert txt file",
+			filepath: "testdata/test.txt",
+		},
 	}
 
 	for _, test := range tests {
@@ -79,7 +83,10 @@ func TestConvertToText(t *testing.T) {
 				t.Fatalf("convertToText returned an error: %v", err)
 			} else if outputs[0].Fields["body"].GetStringValue() == "" {
 				t.Fatal("convertToText returned an empty body")
+			} else if outputs[0].Fields["meta"].GetStructValue() == nil {
+				t.Fatal("convertToText returned a nil meta")
 			}
+
 		})
 	}
 

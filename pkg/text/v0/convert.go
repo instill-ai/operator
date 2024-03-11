@@ -60,6 +60,10 @@ func convertToText(input ConvertToTextInput) (ConvertToTextOutput, error) {
 		return ConvertToTextOutput{}, err
 	}
 
+	if res.Meta == nil {
+		res.Meta = map[string]string{}
+	}
+
 	return ConvertToTextOutput{
 		Body:  res.Body,
 		Meta:  res.Meta,
