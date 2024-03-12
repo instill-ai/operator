@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.10.0-beta](https://github.com/instill-ai/operator/compare/v0.9.0-beta...v0.10.0-beta) (2024-03-12)
+
+
+### Features
+
+* expose description field in Operator entity ([#66](https://github.com/instill-ai/operator/issues/66)) ([043d5e3](https://github.com/instill-ai/operator/commit/043d5e3b0ebda93398c800e70d2511f68b12ac8a))
+
+
+### Bug Fixes
+
+* **text:** fix nil meta issue for txt file ([#70](https://github.com/instill-ai/operator/issues/70)) ([b5ac353](https://github.com/instill-ai/operator/commit/b5ac353a5661a9c39c9c3451e9ca082c45d74eee))
+
 ## [0.9.0-beta](https://github.com/instill-ai/operator/compare/v0.8.0-beta...v0.9.0-beta) (2024-02-29)
 
 
