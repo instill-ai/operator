@@ -7,7 +7,7 @@ require (
 	github.com/fogleman/gg v1.3.0
 	github.com/frankban/quicktest v1.14.6
 	github.com/gofrs/uuid v4.4.0+incompatible
-	github.com/instill-ai/component v0.12.0-beta.0.20240304105959-85bbc223c1df
+	github.com/instill-ai/component v0.13.0-beta
 	github.com/instill-ai/x v0.4.0-alpha
 	github.com/itchyny/gojq v0.12.14
 	github.com/pkoukk/tiktoken-go v0.1.6
@@ -35,7 +35,7 @@ require (
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.2 // indirect
-	github.com/instill-ai/protogen-go v0.3.3-alpha.0.20240304063945-0080cc53de5e // indirect
+	github.com/instill-ai/protogen-go v0.3.3-alpha.0.20240306151355-4398dad0ba73 // indirect
 	github.com/itchyny/timefmt-go v0.1.5 // indirect
 	github.com/jaytaylor/html2text v0.0.0-20230321000545-74c2419ad056 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
