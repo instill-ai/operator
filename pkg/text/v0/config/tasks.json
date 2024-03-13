@@ -79,7 +79,8 @@
     "input": {
       "description": "Input",
       "instillEditOnNodeFields": [
-        "text"
+        "text",
+        "model"
       ],
       "instillUIOrder": 0,
       "properties": {

@@ -42,6 +42,7 @@ func splitTextIntoChunks(input SplitByTokenInput) (SplitByTokenOutput, error) {
 
 	token := tkm.Encode(input.Text, nil, nil)
 	output.TokenCount = len(token)
+	output.TextChunks = []string{}
 	for start := 0; start < len(token); start += *input.ChunkTokenSize {
 		end := min(start+*input.ChunkTokenSize, len(token))
 		output.TextChunks = append(output.TextChunks, tkm.Decode(token[start:end]))
