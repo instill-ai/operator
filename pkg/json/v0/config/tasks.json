@@ -165,6 +165,7 @@
           "type": "array",
           "instillFormat": "array:semi-structured/json",
           "items": {
+            "title": "Result",
             "instillFormat": "semi-structured/json"
           }
         }

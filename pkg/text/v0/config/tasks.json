@@ -188,6 +188,8 @@
           "instillUIOrder": 1,
           "instillFormat": "array:string",
           "items": {
+            "title": "Text Chunk",
+            "description": "Text chunk after splitting",
             "instillFormat": "string",
             "instillUIMultiline": true,
             "type": "string"
